@@ -6,7 +6,7 @@ import { avatarShapes, dataHooks } from './constants';
 import { Avatar as CoreAvatar } from 'wix-ui-core/dist/src/components/avatar';
 import Loader from '../Loader';
 import { placeholderSVGs } from './assets';
-import styles from './Avatar.st.css';
+import { st, classes } from './Avatar.st.css';
 import { capitalize } from '../utils/cssClassUtils';
 import stringToColor from './string-to-color';
 import { FontUpgradeContext } from '../FontUpgrade/context';
@@ -76,7 +76,7 @@ class Avatar extends React.PureComponent {
     return (
       <div
         data-hook={dataHook}
-        className={classNames(className, styles.externalContainer)}
+        className={classNames(className, classes.externalContainer)}
       >
         <FontUpgradeContext.Consumer>
           {context => (
@@ -84,7 +84,7 @@ class Avatar extends React.PureComponent {
               data-hook={dataHooks.avatarWSR}
               onMouseEnter={this._onMouseEnter}
               onMouseLeave={this._onMouseLeave}
-              {...styles('avatarContainer', {
+              className={st(classes.avatarContainer, {
                 shape,
                 size,
                 indication: customIndication || indication,
@@ -96,7 +96,7 @@ class Avatar extends React.PureComponent {
               })}
               data-madefor={context.active}
             >
-              <div className={styles.coreAvatar}>
+              <div className={classes.coreAvatar}>
                 <CoreAvatar
                   {...{
                     ...rest,
@@ -112,7 +112,7 @@ class Avatar extends React.PureComponent {
                     'data-hook': dataHooks.avatarCore,
                   }}
                   className={classNames(
-                    styles.avatar,
+                    classes.avatar,
                     styles[`color${capitalize(calculatedColor)}`],
                   )}
                 />
@@ -120,20 +120,26 @@ class Avatar extends React.PureComponent {
               {renderLoader && [
                 <div
                   key="overlay"
-                  className={classNames(styles.loaderContainer, styles.overlay)}
+                  className={classNames(
+                    classes.loaderContainer,
+                    classes.overlay,
+                  )}
                 />,
                 <div
                   key="loader"
-                  className={classNames(styles.loaderContainer, styles.loader)}
+                  className={classNames(
+                    classes.loaderContainer,
+                    classes.loader,
+                  )}
                 >
                   <Loader dataHook={dataHooks.loader} size="tiny" />
                 </div>,
               ]}
-              {presence && <div className={styles.presence} />}
+              {presence && <div className={classes.presence} />}
               {renderIndication && (
-                <div className={styles.indication}>
+                <div className={classes.indication}>
                   <IconButton
-                    className={styles.iconButtonShadow}
+                    className={classes.iconButtonShadow}
                     dataHook={dataHooks.indication}
                     onClick={onIndicationClick}
                     skin="inverted"
@@ -146,7 +152,7 @@ class Avatar extends React.PureComponent {
               )}
               {renderCustomIndication && (
                 <div
-                  className={styles.indication}
+                  className={classes.indication}
                   data-hook={dataHooks.customIndication}
                   onClick={onIndicationClick}
                 >

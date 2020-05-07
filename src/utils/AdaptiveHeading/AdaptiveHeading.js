@@ -40,7 +40,7 @@ class AdaptiveHeading extends React.PureComponent {
       if (emptyLast) {
         return (
           <Heading
-            {...styles('headerWrapper', { appearance }, this.props)}
+            className={st(classes.headerWrapper, { appearance })}
             dataHook={dataHook}
             appearance={appearance}
             light={light}

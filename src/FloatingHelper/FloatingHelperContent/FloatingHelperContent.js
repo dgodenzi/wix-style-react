@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from './FloatingHelperContent.st.css';
+import { st, classes } from './FloatingHelperContent.st.css';
 import { floatingHelperAppearance } from '../constants';
 import { dataHooks, actionButtonTheme } from './constants';
 import Text from '../../Text';
@@ -43,10 +43,10 @@ const FloatingHelperContent = props => {
   } = props;
 
   return (
-    <div {...styles('root', { hasBody: !!props.body }, props)}>
+    <div className={st(classes.root, { hasBody: !!props.body })}>
       <div>
         {title && (
-          <div className={styles.title}>
+          <div className={classes.title}>
             <Text
               dataHook={dataHooks.title}
               weight="bold"
@@ -68,7 +68,7 @@ const FloatingHelperContent = props => {
         )}
 
         {actionText && onActionClick && actionText.length > 0 && (
-          <div className={styles.action}>
+          <div className={classes.action}>
             <Button
               {...themeToButtonProps[actionTheme]}
               dataHook={dataHooks.actionButton}
@@ -80,13 +80,13 @@ const FloatingHelperContent = props => {
           </div>
         )}
         {footer && (
-          <div data-hook={dataHooks.footer} className={styles.footer}>
+          <div data-hook={dataHooks.footer} className={classes.footer}>
             {footer}
           </div>
         )}
       </div>
       {image && (
-        <div data-hook={dataHooks.image} className={styles.image}>
+        <div data-hook={dataHooks.image} className={classes.image}>
           {image}
         </div>
       )}

@@ -6,7 +6,7 @@ import Title from './Title';
 import { SIZES } from '../constants';
 import { APPEARANCES } from '../../Heading';
 import { SIZES as TEXT_SIZES } from '../../Text';
-import styles from '../MarketingLayout.st.css';
+import { classes } from '../MarketingLayout.st.css';
 
 const titleAppearanceBySize = {
   [SIZES.small]: APPEARANCES.H3,
@@ -21,7 +21,7 @@ const descriptionSizeBySize = {
 };
 
 const Content = ({ size, actions, title, description }) => (
-  <div className={styles.contentContainer}>
+  <div className={classes.contentContainer}>
     <Title appearance={titleAppearanceBySize[size]}>{title}</Title>
     <Description size={descriptionSizeBySize[size]}>{description}</Description>
     {actions}

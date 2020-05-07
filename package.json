@@ -130,7 +130,7 @@
     "@storybook/addon-links": "^5.3.19",
     "@storybook/addon-options": "^5.3.19",
     "@storybook/react": "^5.3.19",
-    "@stylable/cli": "^1.4.0",
+    "@stylable/cli": "^3.4.5",
     "@testing-library/react": "^8.0.9",
     "@types/enzyme": "^3.10.5",
     "@types/howler": "^2.1.2",
@@ -236,7 +236,7 @@
     "slick-carousel": "^1.8.1",
     "wix-animations": "^1.0.332",
     "wix-eventually": "^2.3.0",
-    "wix-ui-core": "^2.0.935",
+    "wix-ui-core": "^3.0.15",
     "wix-ui-icons-common": "^2.0.202",
     "wix-ui-test-utils": "^1.0.172"
   },

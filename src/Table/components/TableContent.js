@@ -5,7 +5,7 @@ import DataTable from '../DataTable';
 import { getDataTableProps, createColumns } from '../Table';
 import { TableContext } from '../TableContext';
 
-import styles from '../Table.st.css';
+import { st, classes } from '../Table.st.css';
 import { BulkSelectionConsumer } from '../BulkSelection';
 
 export const TableContent = ({ titleBarVisible, dataHook, ...rest }) => {
@@ -21,7 +21,7 @@ export const TableContent = ({ titleBarVisible, dataHook, ...rest }) => {
         };
 
         return (
-          <div {...styles('content', { titleBarVisible }, rest)}>
+          <div className={st(classes.content, { titleBarVisible })}>
             {tableProps.showSelection ? (
               <BulkSelectionConsumer
                 consumerCompName="Table.Content"

@@ -2,11 +2,11 @@ import React from 'react';
 import Text from '../../Text';
 import { isString } from '../../utils/StringUtils';
 import { MARKETING_LAYOUT_DESCRIPTION } from '../dataHooks';
-import styles from '../MarketingLayout.st.css';
+import { classes } from '../MarketingLayout.st.css';
 import PropTypes from 'prop-types';
 
 const Description = ({ children, size }) => (
-  <div className={styles.description}>
+  <div className={classes.description}>
     {isString(children) ? (
       <Text dataHook={MARKETING_LAYOUT_DESCRIPTION} size={size} secondary>
         {children}

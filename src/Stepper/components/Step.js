@@ -5,7 +5,7 @@ import ChevronRight from 'wix-ui-icons-common/ChevronRight';
 import Text from '../../Text';
 import StepMarker from './StepMarker';
 import { Type, StepType, DataHook } from '../constants';
-import styles from './Step.st.css';
+import { st, classes } from './Step.st.css';
 
 class Step extends React.PureComponent {
   static displayName = 'Step';
@@ -74,17 +74,13 @@ class Step extends React.PureComponent {
 
     return (
       <button
-        {...styles(
-          'root',
-          {
-            type,
-            styleType,
-            selected: active,
-            hovered: isHovered,
-            clickable: isClickable,
-          },
-          otherProps,
-        )}
+        className={st(classes.root, {
+          type,
+          styleType,
+          selected: active,
+          hovered: isHovered,
+          clickable: isClickable,
+        })}
         data-hook={DataHook.Step}
         data-type={type}
         data-active={active}
@@ -94,14 +90,14 @@ class Step extends React.PureComponent {
         onTransitionEnd={this._handleTransitionEnd}
         {...this._getFocusProps()}
       >
-        <div className={styles.content}>
+        <div className={classes.content}>
           <StepMarker
             number={number}
             active={active}
             type={type}
             styleType={styleType}
             hovered={isHovered && isClickable}
-            className={styles.marker}
+            className={classes.marker}
           />
           <Text
             key={transitionSequence}
@@ -110,12 +106,12 @@ class Step extends React.PureComponent {
             size={styleType === Type.Text ? 'medium' : 'small'}
             showTooltip={!active}
             dataHook={DataHook.StepText}
-            className={styles.text}
+            className={classes.text}
           >
             {text}
           </Text>
         </div>
-        {!last && <ChevronRight className={styles.arrow} />}
+        {!last && <ChevronRight className={classes.arrow} />}
       </button>
     );
   }

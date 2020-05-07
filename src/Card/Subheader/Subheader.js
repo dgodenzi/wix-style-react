@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Text from '../../Text';
 import Box from '../../Box';
-import styles from './Subheader.st.css';
+import { classes } from './Subheader.st.css';
 import classNames from 'classnames';
 
 const isString = a => typeof a === 'string';
@@ -34,9 +34,9 @@ class Subheader extends React.PureComponent {
     return (
       <div
         data-hook={dataHook}
-        className={classNames(styles.container, {
-          [styles.standard]: skin === 'standard',
-          [styles.neutral]: skin === 'neutral',
+        className={classNames(classes.container, {
+          [classes.standard]: skin === 'standard',
+          [classes.neutral]: skin === 'neutral',
         })}
       >
         <Box verticalAlign="middle" flexGrow={1} overflow="hidden">
@@ -50,7 +50,7 @@ class Subheader extends React.PureComponent {
         </Box>
 
         {suffix && (
-          <div className={styles.suffix} data-hook="suffix-node">
+          <div className={classes.suffix} data-hook="suffix-node">
             {suffix}
           </div>
         )}

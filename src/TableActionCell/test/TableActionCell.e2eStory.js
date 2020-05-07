@@ -3,8 +3,8 @@ import { storiesOf } from '@storybook/react';
 import CodeExample from 'wix-storybook-utils/CodeExample';
 
 import { getTestStoryKind } from '../../../stories/storiesHierarchy';
-import { testStories, storySettings } from '../docs/storySettings';
-import style from '../docs/TableActionCell.story.st.css';
+import { testStories, storySettings } from './storySettings';
+import { st, classes } from './TableActionCell.story.st.css';
 
 import PrimaryBlueExample from '../docs/examples/PrimaryBlueExample';
 import PrimaryWhiteExample from '../docs/examples/PrimaryWhiteExample';
@@ -21,68 +21,68 @@ import DisabledPrimaryExample from '../docs/examples/DisabledPrimaryExample';
 const kind = getTestStoryKind(storySettings);
 
 storiesOf(kind, module).add(testStories.tableActionCell, () => (
-  <div {...style('root')}>
-    <div className={style.example}>
+  <div className={st(classes.root)}>
+    <div className={classes.example}>
       <CodeExample title="Blue primary action">
         <PrimaryBlueExample />
       </CodeExample>
     </div>
 
-    <div className={style.example}>
+    <div className={classes.example}>
       <CodeExample title="White primary action">
         <PrimaryWhiteExample />
       </CodeExample>
     </div>
 
-    <div className={style.example}>
+    <div className={classes.example}>
       <CodeExample title="Primary action and secondary actions">
         <PrimarySecondaryExample />
       </CodeExample>
     </div>
 
-    <div className={style.example}>
+    <div className={classes.example}>
       <CodeExample title="Primary action and hidden secondary action">
         <PrimarySecondaryHiddenExample />
       </CodeExample>
     </div>
 
-    <div className={style.example}>
+    <div className={classes.example}>
       <CodeExample title="With custom PopoverMenu props">
         <PopoverMenuPropsExample />
       </CodeExample>
     </div>
 
-    <div className={style.example}>
+    <div className={classes.example}>
       <CodeExample title="Always visible secondary actions">
         <AlwaysVisibleSecondaryExample />
       </CodeExample>
     </div>
 
-    <div className={style.example}>
+    <div className={classes.example}>
       <CodeExample title="Only secondary actions">
         <OnlySecondaryExample />
       </CodeExample>
     </div>
 
-    <div className={style.example}>
+    <div className={classes.example}>
       <CodeExample title="Only visible secondary actions">
         <OnlyVisibleSecondaryExample />
       </CodeExample>
     </div>
 
-    <div className={style.example}>
+    <div className={classes.example}>
       <CodeExample title="Primary and secondary actions with RTL">
         <PrimarySecondaryRTLExample />
       </CodeExample>
     </div>
 
-    <div className={style.example}>
+    <div className={classes.example}>
       <CodeExample title="Disabled secondary actions">
         <DisabledSecondaryExample />
       </CodeExample>
     </div>
 
-    <div className={style.example}>
+    <div className={classes.example}>
       <CodeExample title="Disabled primary actions">
         <DisabledPrimaryExample />
       </CodeExample>

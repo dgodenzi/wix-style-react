@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withFocusable } from 'wix-ui-core/dist/src/hocs/Focusable/FocusableHOC';
 
-import styles from './ToggleButton.st.css';
+import { st, classes } from './ToggleButton.st.css';
 
 import Text from '../../Text';
 
@@ -11,7 +11,7 @@ const addPrefix = icon =>
   React.cloneElement(icon, {
     width: '24',
     height: '24',
-    className: styles.prefix,
+    className: classes.prefix,
   });
 
 const ToggleButton = ({
@@ -26,7 +26,7 @@ const ToggleButton = ({
 }) => (
   <button
     {...rest}
-    {...styles('root', { selected }, rest)}
+    className={st(classes.root, { selected })}
     data-hook={dataHook}
     data-selected={selected}
     disabled={disabled}

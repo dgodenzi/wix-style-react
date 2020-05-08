@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ChevronDown from 'wix-ui-icons-common/ChevronDown';
-import { st, classes } from './BadgeSelect.st.css';
+import { classes } from './BadgeSelect.st.css';
 
 import DropdownLayout from '../DropdownLayout';
 import Popover from '../Popover';

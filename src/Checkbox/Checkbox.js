@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import CheckboxChecked from 'wix-ui-icons-common/system/CheckboxChecked';
 import CheckboxIndeterminate from 'wix-ui-icons-common/system/CheckboxIndeterminate';
-import styles from './Checkbox.st.css';
+import { st, classes } from './Checkbox.st.css';
 import Text from '../Text';
 import { withFocusable } from 'wix-ui-core/dist/src/hocs/Focusable/FocusableHOC';
 

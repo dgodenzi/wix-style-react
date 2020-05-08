@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import WixComponent from '../BaseComponents/WixComponent';
 import Input from '../Input';
 
-import css from './ColorPickerConverter.st.css';
+import { st, classes } from './ColorPickerConverter.st.css';
 import ColorPickerConverterViewer from './ColorPickerConverterViewer';
 import { safeColor, getHexOrEmpty } from './utils';
 
@@ -26,7 +26,7 @@ export default class ColorPickerConverterHex extends WixComponent {
 
   render() {
     return (
-      <div {...css('root', {}, this.props)}>
+      <div className={st(classes.root)}>
         <Input
           size="small"
           value={this.state.hex}
@@ -35,7 +35,7 @@ export default class ColorPickerConverterHex extends WixComponent {
           onFocus={this.handleOnFocus}
           onBlur={this.handleOnBlur}
           onKeyDown={this.handleKeyDown}
-          {...css('colorInput', {}, this.props)}
+          className={classes.colorInput}
         />
         <ColorPickerConverterViewer
           {...this.props}

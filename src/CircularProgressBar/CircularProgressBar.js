@@ -5,7 +5,7 @@ import CircleLoaderCheckSmall from 'wix-ui-icons-common/system/CircleLoaderCheck
 import FormFieldError from 'wix-ui-icons-common/system/FormFieldError';
 import FormFieldErrorSmall from 'wix-ui-icons-common/system/FormFieldErrorSmall';
 import Tooltip from '../Tooltip';
-import style from './CircularProgressBar.st.css';
+import { st, classes } from './CircularProgressBar.st.css';
 import PropTypes from 'prop-types';
 import { dataHooks, Size, sizesMap } from './constants';
 
@@ -27,7 +27,7 @@ class CircularProgressBar extends React.PureComponent {
 
     return (
       <CoreCircularProgressBar
-        {...style('progressBar', { light, size }, this.props)}
+        className={st(classes.progressBar, { light, size })}
         {...otherProps}
         data-hook={dataHooks.circularProgressBar}
         size={sizesMap[size]}
@@ -42,7 +42,7 @@ class CircularProgressBar extends React.PureComponent {
     const { dataHook, error, errorMessage } = this.props;
 
     return (
-      <div data-hook={dataHook} {...style('root', {}, this.props)}>
+      <div data-hook={dataHook} className={st(classes.root)}>
         {error && errorMessage ? (
           <Tooltip content={errorMessage} dataHook={dataHooks.tooltip}>
             {this._renderProgressBar()}

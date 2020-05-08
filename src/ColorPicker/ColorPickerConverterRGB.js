@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import WixComponent from '../BaseComponents/WixComponent';
 import Input from '../Input';
 
-import css from './ColorPickerConverter.st.css';
+import { st, classes } from './ColorPickerConverter.st.css';
 import ColorPickerConverterViewer from './ColorPickerConverterViewer';
 import { safeColor, getRgbOrEmpty } from './utils';
 

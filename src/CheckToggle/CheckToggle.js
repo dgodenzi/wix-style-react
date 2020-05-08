@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from './CheckToggle.st.css';
+import { st, classes } from './CheckToggle.st.css';
 import { dataHooks } from './constants';
 import Tooltip from '../Tooltip';
 import { TooltipCommonProps } from '../common/PropTypes/TooltipCommon';
@@ -56,13 +56,13 @@ class CheckToggle extends React.PureComponent {
       <>
         <input
           type="checkbox"
-          className={styles.input}
+          className={classes.input}
           data-hook={dataHooks.toggle}
           checked={checked}
           disabled={disabled}
           onChange={this._isControlled() ? onChange : this._handleChange}
         />
-        <span className={styles.toggle}>{icon[size]}</span>
+        <span className={classes.toggle}>{icon[size]}</span>
       </>
     );
   };
@@ -95,11 +95,16 @@ class CheckToggle extends React.PureComponent {
       tooltipContent,
       focusableOnFocus,
       focusableOnBlur,
+      className,
     } = this.props;
 
     return (
       <label
-        {...styles('root', { checked, size, skin, disabled }, this.props)}
+        className={st(
+          classes.root,
+          { checked, size, skin, disabled },
+          className,
+        )}
         data-hook={dataHook}
         onFocus={focusableOnFocus}
         onBlur={focusableOnBlur}

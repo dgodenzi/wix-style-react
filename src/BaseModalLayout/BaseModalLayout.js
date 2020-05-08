@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import styles from './BaseModalLayout.st.css';
+import { st, classes } from './BaseModalLayout.st.css';
 import { dataHooks } from './constants';
 import CloseButton from '../CloseButton';
 import { BaseModalLayoutContext } from './BaseModalLayoutContext';
@@ -14,11 +14,11 @@ import {
 } from './LayoutBlocks';
 
 const classNames = {
-  headerClassName: styles.header,
-  contentClassName: styles.content,
-  footerClassName: styles.footer,
-  footnoteClassName: styles.footnote,
-  illustrationClassName: styles.illustration,
+  headerClassName: classes.header,
+  contentClassName: classes.content,
+  footerClassName: classes.footer,
+  footnoteClassName: classes.footnote,
+  illustrationClassName: classes.illustration,
 };
 
 /** Private component to be used by all public modals. Represents the common internals of all modals */
@@ -43,7 +43,7 @@ class BaseModalLayout extends React.PureComponent {
         data-hook={dataHook}
         data-theme={theme}
         style={style}
-        {...styles('root', { theme }, { className, ...restProps })}
+        className={st(classes.root, { theme }, className)}
       >
         <BaseModalLayoutContext.Provider
           value={{ ...restProps, ...classNames }}
@@ -53,7 +53,7 @@ class BaseModalLayout extends React.PureComponent {
         {onCloseButtonClick && (
           <CloseButton
             dataHook={dataHooks.closeButton}
-            className={styles.closeButton}
+            className={classes.closeButton}
             onClick={onCloseButtonClick}
             size="large"
             skin="dark"

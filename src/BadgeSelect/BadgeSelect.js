@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ChevronDown from 'wix-ui-icons-common/ChevronDown';
-import style from './BadgeSelect.st.css';
+import { st, classes } from './BadgeSelect.st.css';
 
 import DropdownLayout from '../DropdownLayout';
 import Popover from '../Popover';
@@ -112,7 +112,7 @@ class BadgeSelect extends React.Component {
         onKeyDown={this._onKeyDown}
         onClickOutside={this.hideDropdown}
         {...popoverProps}
-        {...style('root', {}, this.props)}
+        className={classes.root}
       >
         <Popover.Element>
           <Badge

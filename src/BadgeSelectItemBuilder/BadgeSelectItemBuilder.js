@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './BadgeSelectItem.st.css';
+import { st, classes } from './BadgeSelectItem.st.css';
 import PropTypes from 'prop-types';
 import Text from '../Text/Text';
 
@@ -7,9 +7,9 @@ const BadgeOption = props => {
   const { skin, text } = props;
 
   return (
-    <div {...styles('root', { skin }, props)}>
-      <div className={styles.marker} />
-      <span className={styles.label}>
+    <div className={st(classes.root, { skin })}>
+      <div className={classes.marker} />
+      <span className={classes.label}>
         <Text size="small" skin="standard" tagName="span" weight="normal">
           {text}
         </Text>

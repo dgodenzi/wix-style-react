@@ -4,7 +4,7 @@ import X from 'wix-ui-icons-common/X';
 import Text from '../Text';
 import IconButton from '../IconButton';
 import Tooltip from '../Tooltip';
-import styles from './ModalPreviewLayout.st.css';
+import { st, classes } from './ModalPreviewLayout.st.css';
 import { dataHooks, modalPreviewIDs, arrowsDirection } from './constants';
 import NavigationButton from './NavigationButton/NavigationButton';
 
@@ -105,25 +105,28 @@ class ModalPreviewLayout extends React.PureComponent {
       <div
         id={modalPreviewIDs.overlay}
         data-hook={dataHook}
-        {...styles('root', {}, this.props)}
+        className={st(classes.root)}
         onClick={this._onOverlayClick(onClose)}
       >
-        <div className={styles.header}>
-          <div data-hook={dataHooks.modalPreviewTitle} className={styles.title}>
+        <div className={classes.header}>
+          <div
+            data-hook={dataHooks.modalPreviewTitle}
+            className={classes.title}
+          >
             <Text light ellipsis>
               {title}
             </Text>
           </div>
           <div
-            className={styles.actions}
+            className={classes.actions}
             data-hook={dataHooks.modalPreviewActions}
           >
             {actions}
           </div>
-          <div className={styles.closeButton}>
+          <div className={classes.closeButton}>
             {closeButtonTooltipText ? (
               <Tooltip
-                className={styles.modalTooltip}
+                className={classes.modalTooltip}
                 dataHook={dataHooks.closeButtonTooltip}
                 appendTo="scrollParent"
                 content={<Text>{closeButtonTooltipText}</Text>}
@@ -155,11 +158,11 @@ class ModalPreviewLayout extends React.PureComponent {
         <div
           id={modalPreviewIDs.innerOverlay}
           data-hook={dataHooks.innerOverlay}
-          className={styles.innerOverlay}
+          className={classes.innerOverlay}
         >
           <div
             data-hook={dataHooks.modalPreviewContent}
-            className={styles.content}
+            className={classes.content}
             data-index={childIndexDisplayed}
           >
             {childrenArr[childIndexDisplayed]}

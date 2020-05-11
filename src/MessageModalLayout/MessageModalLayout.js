@@ -1,10 +1,8 @@
 import React, { useState, useCallback } from 'react';
-import styles from './MessageModalLayout.st.css';
+import { st, classes } from './MessageModalLayout.st.css';
 
 import BaseModalLayout from '../BaseModalLayout';
-import Box from '../Box';
 import PropTypes from 'prop-types';
-import { APPEARANCES } from '../Heading';
 import Button from '../Button';
 
 /** MessageModalLayout */
@@ -37,12 +35,12 @@ const MessageModalLayout = ({ children, ...restProps }) => {
 
   return (
     <BaseModalLayout
-      {...styles('root', { hasIllustration }, restProps)}
       {...restProps}
+      className={st(classes.root, { hasIllustration }, className)}
     >
-      <div className={styles.topAreaContainer}>
+      <div className={classes.topAreaContainer}>
         <BaseModalLayout.Illustration />
-        <div className={styles.contentAreaContainer}>
+        <div className={classes.contentAreaContainer}>
           <BaseModalLayout.Header />
           <BaseModalLayout.Content
             contentHideDividers

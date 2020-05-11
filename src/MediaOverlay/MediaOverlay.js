@@ -6,7 +6,7 @@ import { withFocusable } from 'wix-ui-core/dist/src/hocs/Focusable/FocusableHOC'
 import Content from './Content';
 import DragHandle from './DragHandle';
 import { Layer, Skin, Placement, Visible } from './constants';
-import styles from './MediaOverlay.st.css';
+import { st, classes } from './MediaOverlay.st.css';
 
 const layerToVisiblePropMap = {
   [Layer.Default]: Visible.Default,
@@ -148,7 +148,7 @@ class MediaOverlay extends React.PureComponent {
     }
 
     return (
-      <div {...styles('overlay', { layer, skin })}>
+      <div className={st(classes.overlay, { layer, skin })}>
         {this._renderContent(layer)}
       </div>
     );
@@ -166,10 +166,10 @@ class MediaOverlay extends React.PureComponent {
       mountOnEnter,
       unmountOnExit: mountOnEnter,
       classNames: {
-        enter: styles.hoverEnter,
-        enterActive: styles.hoverEnterActive,
-        enterDone: styles.hoverEnterDone,
-        exit: styles.hoverExit,
+        enter: classes.hoverEnter,
+        enterActive: classes.hoverEnterActive,
+        enterDone: classes.hoverEnterDone,
+        exit: classes.hoverExit,
       },
     };
 
@@ -193,17 +193,17 @@ class MediaOverlay extends React.PureComponent {
 
     return (
       <>
-        <div {...styles('contentRow', { row: 'top' })}>
+        <div className={st(classes.contentRow, { row: 'top' })}>
           {this._renderContentArea(layer, Placement.TopStart)}
           {this._renderContentArea(layer, Placement.TopEnd)}
         </div>
         {hasMiddleContent && (
-          <div {...styles('contentRow', { row: 'middle' })}>
+          <div className={st(classes.contentRow, { row: 'middle' })}>
             {this._renderContentArea(layer, Placement.Middle)}
           </div>
         )}
         {hasBottomContent && (
-          <div {...styles('contentRow', { row: 'bottom' })}>
+          <div className={st(classes.contentRow, { row: 'bottom' })}>
             {this._renderContentArea(layer, Placement.BottomStart)}
             {this._renderContentArea(layer, Placement.BottomEnd)}
           </div>
@@ -219,7 +219,10 @@ class MediaOverlay extends React.PureComponent {
     }
 
     return (
-      <div {...styles('contentArea', { placement })} data-hook="content-area">
+      <div
+        className={st(classes.contentArea, { placement })}
+        data-hook="content-area"
+      >
         {contentElements.map(({ props }, index) => (
           <React.Fragment key={index}>{props.children}</React.Fragment>
         ))}
@@ -239,7 +242,7 @@ class MediaOverlay extends React.PureComponent {
         onMouseLeave={this._onMouseLeave}
         onClick={onClick}
         {...this._getFocusProps()}
-        {...styles('root', { clickable: !!onClick }, this.props)}
+        className={st(classes.root, { clickable: !!onClick })}
         data-skin={skin}
         data-hoverskin={this._getHoverSkin()}
         style={{ backgroundImage: isMediaImageUrl && `url(${media})` }}

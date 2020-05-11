@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { dataHooks } from './constants';
-import style from './MobilePreviewWidget.st.css';
+import { st, classes } from './MobilePreviewWidget.st.css';
 
 import PreviewWidget from '../PreviewWidget';
 
@@ -47,21 +47,21 @@ class MobilePreviewWidget extends React.PureComponent {
 
     return (
       <PreviewWidget
-        {...style('root')}
+        className={st(classes.root)}
         dataHook={dataHook}
         skin={skin}
         backgroundColor={backgroundColor}
         height={height}
         width={width}
       >
-        <div data-hook={dataHooks.mobileHeader} className={style.header}>
-          <div className={style.speaker} />
-          <div className={style.camera} />
+        <div data-hook={dataHooks.mobileHeader} className={classes.header}>
+          <div className={classes.speaker} />
+          <div className={classes.camera} />
         </div>
-        <div data-hook={dataHooks.mobileContent} className={style.content}>
+        <div data-hook={dataHooks.mobileContent} className={classes.content}>
           {children}
         </div>
-        <div data-hook={dataHooks.mobileFooter} className={style.footer} />
+        <div data-hook={dataHooks.mobileFooter} className={classes.footer} />
       </PreviewWidget>
     );
   }

@@ -5,7 +5,7 @@ import Content from './components/Content';
 import { Layout, Cell } from '../Layout';
 import Proportion from '../Proportion';
 import { SIZES } from './constants';
-import styles from './MarketingLayout.st.css';
+import { st, classes } from './MarketingLayout.st.css';
 import colors from '../colors.scss';
 
 const cellSpansBySize = {
@@ -67,7 +67,7 @@ class MarketingLayout extends React.PureComponent {
     const { size } = this.props;
     return (
       <Proportion aspectRatio={imagePlaceholderAspectRatioBySize[size]}>
-        <div className={styles.imagePlaceholder} />
+        <div className={classes.imagePlaceholder} />
       </Proportion>
     );
   };
@@ -76,17 +76,17 @@ class MarketingLayout extends React.PureComponent {
     const { image, imageBackgroundColor } = this.props;
     return (
       <Cell key="image" span={span}>
-        <div className={styles.imageWrapper}>
+        <div className={classes.imageWrapper}>
           {imageBackgroundColor && (
             <div
-              className={styles.imageBackground}
+              className={classes.imageBackground}
               style={{
                 backgroundColor:
                   colors[imageBackgroundColor] || imageBackgroundColor,
               }}
             />
           )}
-          <div className={styles.imageContainer}>
+          <div className={classes.imageContainer}>
             {typeof image === 'string' ? (
               <img src={image} width="100%" />
             ) : (
@@ -139,16 +139,12 @@ class MarketingLayout extends React.PureComponent {
 
     return (
       <div
-        {...styles(
-          'root',
-          {
-            size,
-            inverted,
-            withActions: !!actions,
-            withImageBackground: !!imageBackgroundColor,
-          },
-          this.props,
-        )}
+        className={st(classes.root, {
+          size,
+          inverted,
+          withActions: !!actions,
+          withImageBackground: !!imageBackgroundColor,
+        })}
         data-hook={dataHook}
       >
         {this._renderContent()}

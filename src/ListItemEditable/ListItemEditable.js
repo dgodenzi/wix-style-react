@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Input from '../Input';
 
-import styles from './ListItemEditable.st.css';
+import { classes } from './ListItemEditable.st.css';
 import { dataHooks } from './constants';
 import IconButton from '../IconButton';
 import Tooltip from '../Tooltip';
@@ -43,7 +43,7 @@ class ListItemEditable extends React.PureComponent {
       <Box marginRight={3} flex={1} minWidth={0}>
         <Input
           dataHook={dataHooks.input}
-          className={styles.input}
+          className={classes.input}
           size={size}
           status={status}
           value={value}

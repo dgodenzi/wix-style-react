@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from './LinearProgressBar.st.css';
+import { st, classes } from './LinearProgressBar.st.css';
 import { LinearProgressBar as CoreLinearProgressBar } from 'wix-ui-core/dist/src/components/linear-progress-bar';
 import ToggleOn from 'wix-ui-icons-common/system/ToggleOn';
 import StatusIndicator from '../StatusIndicator';
@@ -23,7 +23,7 @@ class LinearProgressBar extends React.PureComponent {
     return (
       <CoreLinearProgressBar
         data-hook={dataHook}
-        {...styles('root', { light, skin }, this.props)}
+        className={st(classes.root, { light, skin })}
         data-skin={skin}
         {...otherProps}
         error={error}

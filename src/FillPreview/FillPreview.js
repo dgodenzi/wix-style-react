@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import Proportion from '../Proportion';
 
 import { parseColor, parseGradient, parseUrl, parseElement } from './utils';
-import styles from './FillPreview.st.css';
+import { st, classes } from './FillPreview.st.css';
 
 class FillPreview extends React.PureComponent {
   static displayName = 'FillPreview';
@@ -64,14 +64,13 @@ class FillPreview extends React.PureComponent {
     } = this.props;
     const background = this._getBackground(fill);
     return (
-      <div {...styles('root', { selected }, rest)}>
+      <div className={st(classes.root, { selected })}>
         <Proportion dataHook={dataHook} aspectRatio={aspectRatio}>
           <ButtonNext
             {...rest}
             as={as}
             data-selected={selected}
-            className={styles.button}
-            {...styles('button')}
+            className={classes.button}
             data-hook="fill-preview-button"
             style={background}
             onClick={onClick}

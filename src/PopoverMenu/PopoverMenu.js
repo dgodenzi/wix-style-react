@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import ListItemAction from '../ListItemAction';
 import DropdownBase from '../DropdownBase';
 import { placements } from '../Popover';
-import styles from './PopoverMenu.st.css';
+import { st, classes } from './PopoverMenu.st.css';
 
 /** PopoverMenu */
 class PopoverMenu extends React.PureComponent {
@@ -14,7 +14,7 @@ class PopoverMenu extends React.PureComponent {
   static Divider = ({ dataHook }) => {
     return (
       <div data-hook={dataHook} style={{ padding: `6px 24px 6px 18px` }}>
-        <div className={styles.divider} />
+        <div className={classes.divider} />
       </div>
     );
   };
@@ -247,7 +247,7 @@ class PopoverMenu extends React.PureComponent {
             onKeyDown={e => this._onKeyDown(e, id)}
             skin={option.skin || 'dark'}
             size={textSize}
-            className={styles.listItem}
+            className={classes.listItem}
             ellipsis={ellipsis}
           />
         ),
@@ -286,10 +286,11 @@ class PopoverMenu extends React.PureComponent {
       moveBy,
       maxHeight,
       zIndex,
+      className,
     } = this.props;
     return (
       <DropdownBase
-        {...styles('root', {}, this.props)}
+        className={st(classes.root, className)}
         dataHook={dataHook}
         animate
         options={this._renderOptions()}

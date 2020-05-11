@@ -5,8 +5,7 @@ import Text from '../../Text';
 import ChevronLeft from 'wix-ui-icons-common/ChevronLeft';
 import ChevronRight from 'wix-ui-icons-common/ChevronRight';
 import { arrowsDirection, dataHooks } from '../constants';
-import styles from '../ModalPreviewLayout.st.css';
-import classNames from 'classnames';
+import { st, classes } from '../ModalPreviewLayout.st.css';
 
 const iconButtonArrow = {
   [arrowsDirection.rightArrow]: <ChevronRight />,
@@ -16,20 +15,20 @@ const iconButtonArrow = {
 const tooltipProps = {
   [arrowsDirection.rightArrow]: {
     dataHook: dataHooks.nextNavigationButtonTooltip,
-    className: styles.modalTooltip,
+    className: classes.modalTooltip,
     appendTo: 'scrollParent',
     placement: 'right',
   },
   [arrowsDirection.leftArrow]: {
     dataHook: dataHooks.prevNavigationButtonTooltip,
-    className: styles.modalTooltip,
+    className: classes.modalTooltip,
     appendTo: 'scrollParent',
     placement: 'left',
   },
 };
 
 const NavigationButton = ({ direction, dataHook, tooltipText, onClick }) => (
-  <div className={classNames(styles.navigationButton, styles[direction])}>
+  <div className={st(classes.navigationButton, classes[direction])}>
     {tooltipText ? (
       <Tooltip
         content={<Text children={tooltipText} />}

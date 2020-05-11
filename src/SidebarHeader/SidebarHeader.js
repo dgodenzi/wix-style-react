@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import styles from './SidebarHeader.st.css';
+import { st, classes } from './SidebarHeader.st.css';
 import { dataHooks } from './constants';
 import Text from '../Text';
 import { SidebarContext } from '../Sidebar/SidebarAPI';
@@ -31,11 +31,11 @@ class SidebarHeader extends React.PureComponent {
           const skin = (context && context.getSkin()) || sidebarSkins.dark;
 
           return (
-            <div data-hook={dataHook} {...styles('root', { skin }, this.props)}>
+            <div data-hook={dataHook} className={st(classes.root, { skin })}>
               {title && (
                 <Text
                   dataHook={dataHooks.title}
-                  className={styles.title}
+                  className={classes.title}
                   size="medium"
                   weight="bold"
                   ellipsis
@@ -47,7 +47,7 @@ class SidebarHeader extends React.PureComponent {
               {subtitle && (
                 <Text
                   dataHook={dataHooks.subtitle}
-                  className={styles.subtitle}
+                  className={classes.subtitle}
                   size="tiny"
                   weight="thin"
                   ellipsis

@@ -5,7 +5,7 @@ import requestAnimationFramePolyfill from '../utils/request-animation-frame';
 
 import PropTypes from 'prop-types';
 
-import style from './Popover.st.css';
+import { st, classes } from './Popover.st.css';
 import { FontUpgradeContext } from '../FontUpgrade/context';
 import FontUpgrade from '../FontUpgrade';
 
@@ -96,7 +96,7 @@ class Popover extends React.Component {
   };
 
   render() {
-    const { dataHook, animate, theme, ...rest } = this.props;
+    const { dataHook, animate, theme, className, ...rest } = this.props;
 
     const timeout = animate
       ? { enter: ANIMATION_ENTER, exit: ANIMATION_EXIT }
@@ -108,13 +108,7 @@ class Popover extends React.Component {
         timeout={timeout}
         {...(dataHook ? { 'data-hook': dataHook } : undefined)}
         {...rest}
-        {...style(
-          'root',
-          {
-            theme,
-          },
-          this.props,
-        )}
+        className={st(classes.root, { theme }, className)}
       />
     );
   }

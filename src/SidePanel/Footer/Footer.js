@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from './Footer.st.css';
+import { st, classes } from './Footer.st.css';
 import { dataHooks } from '../constants';
 import Divider from '../../Divider';
 
@@ -21,14 +21,14 @@ class Footer extends React.PureComponent {
   };
 
   render() {
-    const { children, showDivider } = this.props;
+    const { children, className, showDivider } = this.props;
     return (
       <div
-        {...styles('root', {}, this.props)}
+        className={st(classes.root, className)}
         data-hook={dataHooks.sidePanelFooter}
       >
         {showDivider && <Divider dataHook={dataHooks.sidePanelHeaderDivider} />}
-        <div className={styles.footerContainer}>{children}</div>
+        <div className={classes.footerContainer}>{children}</div>
       </div>
     );
   }

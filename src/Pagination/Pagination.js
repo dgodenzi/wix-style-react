@@ -5,7 +5,7 @@ import { withFocusable } from 'wix-ui-core/dist/src/hocs/Focusable/FocusableHOC'
 import ChevronLeft from 'wix-ui-icons-common/ChevronLeft';
 import ChevronRight from 'wix-ui-icons-common/ChevronRight';
 
-import style from './Pagination.st.css';
+import { st, classes } from './Pagination.st.css';
 
 const coreComponentDefaults = {
   showFirstPage: true,
@@ -14,8 +14,8 @@ const coreComponentDefaults = {
   showFirstLastNavButtons: false,
   showInputModeTotalPages: false,
   paginationMode: 'pages',
-  nextLabel: <ChevronRight {...style('arrow')} />,
-  previousLabel: <ChevronLeft {...style('arrow')} />,
+  nextLabel: <ChevronRight className={classes.arrow} />,
+  previousLabel: <ChevronLeft className={classes.arrow} />,
 };
 
 /** Component for pagination */
@@ -60,19 +60,20 @@ class Pagination extends React.PureComponent {
       onChange,
       nextLabel,
       previousLabel,
-      ...props
     } = this.props;
 
     return (
       <div
-        {...style('root', {}, props)}
+        className={st(classes.root)}
         data-hook={dataHook}
         onFocus={this.props.focusableOnFocus}
         onBlur={this.props.focusableOnBlur}
       >
         <CorePagination
-          {...style('pagination', {}, props)}
+          className={classes.pagination}
           {...coreComponentDefaults}
+          previousLabel={previousLabel || coreComponentDefaults.previousLabel}
+          nextLabel={nextLabel || coreComponentDefaults.nextLabel}
           onChange={onChange}
           totalPages={totalPages}
           currentPage={currentPage}

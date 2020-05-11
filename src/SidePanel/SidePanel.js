@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from './SidePanel.st.css';
+import { st, classes } from './SidePanel.st.css';
 import Header from './Header';
 import Content from './Content';
 import Footer from './Footer';
@@ -30,10 +30,10 @@ class SidePanel extends React.PureComponent {
   };
 
   render() {
-    const { dataHook, children } = this.props;
+    const { dataHook, children, className } = this.props;
     return (
       <SidePanelContext.Provider value={this.sidePanelContext}>
-        <div {...styles('root', {}, this.props)} data-hook={dataHook}>
+        <div className={st(classes.root, className)} data-hook={dataHook}>
           {children}
         </div>
       </SidePanelContext.Provider>

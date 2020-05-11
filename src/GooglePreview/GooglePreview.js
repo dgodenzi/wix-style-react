@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import style from './GooglePreview.st.css';
+import { st, classes } from './GooglePreview.st.css';
 
 import Text from '../Text';
 
@@ -23,9 +23,9 @@ class GooglePreview extends React.PureComponent {
 
   render() {
     return (
-      <div {...style('root', {}, this.props)} data-hook={this.props.dataHook}>
+      <div className={st(classes.root)} data-hook={this.props.dataHook}>
         <Text
-          className={style.googlePreviewTitle}
+          className={classes.googlePreviewTitle}
           dataHook={'googlePreview-title'}
           weight="bold"
           size="medium"
@@ -39,15 +39,15 @@ class GooglePreview extends React.PureComponent {
           weight="thin"
           size="tiny"
           light={false}
-          className={style.googlePreviewUrl}
+          className={classes.googlePreviewUrl}
           data-hook={'googlePreview-previewUrl'}
           ellipsis
         >
           {this.props.previewUrl}
         </Text>
-        <div className={style.googlePreviewDescriptionContainer}>
+        <div className={classes.googlePreviewDescriptionContainer}>
           <Text
-            className={style.googlePreviewDescription}
+            className={classes.googlePreviewDescription}
             weight="thin"
             size="tiny"
             light={false}

@@ -5,7 +5,7 @@ import InfoCircleSmall from 'wix-ui-icons-common/InfoCircleSmall';
 import { TooltipCommonProps } from '../common/PropTypes/TooltipCommon';
 
 import Tooltip from '../Tooltip';
-import styles from './InfoIcon.st.css';
+import { st, classes } from './InfoIcon.st.css';
 import { getTooltipDataHook } from './utils';
 
 const iconComponentBySizeMap = {
@@ -13,20 +13,16 @@ const iconComponentBySizeMap = {
   medium: InfoCircle,
 };
 
-const InfoIcon = ({ dataHook, content, size, tooltipProps, ...otherProps }) => {
+const InfoIcon = ({ dataHook, content, size, tooltipProps }) => {
   const Icon = iconComponentBySizeMap[size];
   return (
-    <div
-      {...styles('root', {}, otherProps)}
-      data-size={size}
-      data-hook={dataHook}
-    >
+    <div className={st(classes.root)} data-size={size} data-hook={dataHook}>
       <Tooltip
         {...tooltipProps}
         content={content}
         dataHook={getTooltipDataHook(dataHook)}
       >
-        <Icon className={styles.icon} />
+        <Icon className={classes.icon} />
       </Tooltip>
     </div>
   );

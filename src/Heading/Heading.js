@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ellipsisHOC from '../common/EllipsisHOC';
-import style from './Heading.st.css';
+import { st, classes } from './Heading.st.css';
 
 export const APPEARANCES = {
   H1: 'H1',
@@ -12,14 +12,19 @@ export const APPEARANCES = {
   H6: 'H6',
 };
 
-const Heading = ({ light, appearance, children, ...rest }) => {
-  const { dataHook, ...headingProps } = rest;
+const Heading = ({
+  light,
+  appearance,
+  children,
+  dataHook,
+  ...headingProps
+}) => {
   return React.createElement(
     appearance.toLowerCase(),
     {
       ...headingProps,
       'data-hook': dataHook,
-      ...style('root', { light, appearance }, rest),
+      className: st(classes.root, { light, appearance }),
       'data-appearance': appearance,
       'data-light': light,
     },

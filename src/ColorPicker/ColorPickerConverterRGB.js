@@ -27,28 +27,28 @@ export default class ColorPickerConverterRGB extends WixComponent {
 
   render() {
     return (
-      <div {...css('root', {}, this.props)}>
-        <div {...css('distribute', {}, this.props)}>
+      <div className={st(classes.root)}>
+        <div className={classes.distribute}>
           <Input
             size="small"
             value={this.state.r}
             onChange={e => this.change('r', e)}
             placeholder="R"
-            {...css('distributedItem', {}, this.props)}
+            className={classes.distributedItem}
           />
           <Input
             size="small"
             value={this.state.g}
             onChange={e => this.change('g', e)}
             placeholder="G"
-            {...css('distributedItem', {}, this.props)}
+            className={classes.distributedItem}
           />
           <Input
             size="small"
             value={this.state.b}
             onChange={e => this.change('b', e)}
             placeholder="B"
-            {...css('distributedItem', {}, this.props)}
+            className={classes.distributedItem}
           />
         </div>
         <ColorPickerConverterViewer

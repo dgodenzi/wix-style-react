@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from './CounterBadge.st.css';
+import { st, classes } from './CounterBadge.st.css';
 
 const MAX_NUMBER = 100;
 
@@ -9,12 +9,12 @@ class CounterBadge extends React.PureComponent {
   _renderNumberContent = n => (n < MAX_NUMBER ? n : `${MAX_NUMBER - 1}+`);
 
   render() {
-    const { dataHook, skin, children } = this.props;
+    const { dataHook, skin, children, className } = this.props;
     const custom = isNaN(children);
 
     return (
       <div
-        {...styles('root', { skin, custom }, this.props)}
+        className={st(classes.root, { skin, custom }, className)}
         data-hook={dataHook}
       >
         {custom ? children : this._renderNumberContent(Number(children))}

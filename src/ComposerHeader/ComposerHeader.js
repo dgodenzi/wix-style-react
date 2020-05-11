@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import ArrowLeft from 'wix-ui-icons-common/ArrowLeft';
 
-import styles from './ComposerHeader.st.css';
+import { st, classes } from './ComposerHeader.st.css';
 import TextButton from '../TextButton';
 import Text from '../Text/Text';
 import { dataHooks } from './constants';
@@ -17,7 +17,7 @@ const ComposerHeaderSaveStatus = ({
 }) => (
   <Text
     dataHook={dataHook || dataHooks.saveStatus}
-    className={styles.saveStatus}
+    className={classes.saveStatus}
     secondary
     light
     size={size}
@@ -56,7 +56,7 @@ const renderSingleAction = ({ props, index }) => {
         key={index}
         data-hook={dataHook}
         style={{ ...rest, justifyContent: rest.justifyContent }}
-        className={styles.actions}
+        className={classes.actions}
       >
         {children}
       </div>
@@ -71,7 +71,7 @@ const BackButton = React.memo(({ backButtonValue, onBackClick, size }) => {
         skin="dark"
         prefixIcon={<ArrowLeft />}
         dataHook={dataHooks.backButton}
-        className={styles.backButton}
+        className={classes.backButton}
         size={size}
         onClick={onBackClick}
       >
@@ -85,7 +85,7 @@ const Actions = React.memo(({ children }) => {
   const actions = filterChildren({ children, displayName: 'Actions' });
   return (
     actions && (
-      <div className={styles.container}>
+      <div className={classes.container}>
         {actions.map(({ props }, index) =>
           renderSingleAction({ props, index }),
         )}
@@ -105,7 +105,7 @@ const MainActions = React.memo(({ children }) => {
   return (
     exists && (
       <div
-        className={styles.mainActions}
+        className={classes.mainActions}
         data-hook={mainActions[0].props.dataHook || dataHooks.mainAction}
       >
         {mainActions[0] && mainActions[0].props.children}
@@ -151,7 +151,7 @@ const LeftDivider = React.memo(({ backButton, children }) => {
 
   return (
     shouldRender && (
-      <div className={styles.divider} data-hook={dataHooks.leftDivider} />
+      <div className={classes.divider} data-hook={dataHooks.leftDivider} />
     )
   );
 });
@@ -169,7 +169,7 @@ const RightDivider = React.memo(({ children }) => {
 
   return (
     shouldRender && (
-      <div className={styles.divider} data-hook={dataHooks.rightDivider} />
+      <div className={classes.divider} data-hook={dataHooks.rightDivider} />
     )
   );
 });
@@ -185,7 +185,10 @@ const ComposerHeader = ({
   ...rest
 }) => {
   return (
-    <div data-hook={dataHook} {...styles('root', { size, dropShadow }, rest)}>
+    <div
+      data-hook={dataHook}
+      className={st(classes.root, { size, dropShadow })}
+    >
       <BackButton
         size={size}
         backButtonValue={backButtonValue}

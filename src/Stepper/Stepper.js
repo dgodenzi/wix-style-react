@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import Step from './components/Step';
 import { StepType } from './constants';
 import { validateStepsPropType } from './utils';
-import styles from './Stepper.st.css';
+import { st, classes } from './Stepper.st.css';
 
 /** Stepper */
 class Stepper extends React.PureComponent {
@@ -51,19 +51,11 @@ class Stepper extends React.PureComponent {
   };
 
   render() {
-    const {
-      dataHook,
-      steps,
-      type,
-      fit,
-      activeStep,
-      onClick,
-      ...otherProps
-    } = this.props;
+    const { dataHook, steps, type, fit, activeStep, onClick } = this.props;
 
     return (
       <div
-        {...styles('root', { fit }, otherProps)}
+        className={st(classes.root, { fit })}
         data-hook={dataHook}
         data-type={type}
         data-fit={fit}

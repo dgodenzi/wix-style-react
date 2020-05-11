@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import style from './SocialPreview.st.css';
+import { st, classes } from './SocialPreview.st.css';
 
 import Text from '../Text';
 
@@ -26,15 +26,15 @@ class SocialPreview extends React.Component {
     const { title, description, previewUrl, media } = this.props;
 
     return (
-      <div {...style('root', {}, this.props)} data-hook={this.props.dataHook}>
+      <div className={st(classes.root)} data-hook={this.props.dataHook}>
         {media}
-        <div className={style.container}>
+        <div className={classes.container}>
           <Text
             weight="normal"
             size="tiny"
             light={false}
             dataHook="socialPreview-url"
-            className={style.socialPreviewUrl}
+            className={classes.socialPreviewUrl}
             ellipsis
           >
             {previewUrl && previewUrl.toUpperCase()}
@@ -44,7 +44,7 @@ class SocialPreview extends React.Component {
             size="small"
             light={false}
             dataHook="socialPreview-title"
-            className={style.socialPreviewTitle}
+            className={classes.socialPreviewTitle}
             ellipsis
           >
             {title}
@@ -54,7 +54,7 @@ class SocialPreview extends React.Component {
             size="tiny"
             light={false}
             dataHook="socialPreview-description"
-            className={style.socialPreviewDescription}
+            className={classes.socialPreviewDescription}
             ellipsis
           >
             {description}

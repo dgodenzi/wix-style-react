@@ -9,7 +9,7 @@ import TwitterIcon from 'wix-ui-icons-common/system/SocialButtonTwitter';
 import { ButtonNext } from 'wix-ui-core/dist/src/components/button-next';
 
 import Text from '../Text';
-import styles from './SocialButton.st.css';
+import { st, classes } from './SocialButton.st.css';
 import { DataHook } from './constants';
 
 const iconMap = {
@@ -28,7 +28,7 @@ const Icon = React.memo(props => {
 
   return (
     <ButtonNext
-      {...styles('icon', { type: icon, disabled, single: !text }, props)}
+      className={st(classes.icon, { type: icon, disabled, single: !text })}
       data-hook={dataHook}
     >
       {!!iconMap[icon] && <SocialIcon />}
@@ -37,10 +37,10 @@ const Icon = React.memo(props => {
 });
 
 /** Social networks share button with title */
-const SocialButton = ({ dataHook, text, onClick, icon, disabled, ...rest }) => {
+const SocialButton = ({ dataHook, text, onClick, icon, disabled }) => {
   return (
     <div
-      {...styles('root', { disabled }, rest)}
+      className={st(classes.root, { disabled })}
       data-hook={dataHook}
       onClick={disabled ? undefined : onClick}
     >

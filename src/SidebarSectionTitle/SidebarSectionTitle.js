@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import styles from './SidebarSectionTitle.st.css';
+import { st, classes } from './SidebarSectionTitle.st.css';
 import Text from '../Text';
 import { SidebarContext } from '../Sidebar/SidebarAPI';
 import { sidebarSkins } from '../Sidebar/constants';
@@ -28,7 +28,7 @@ class SidebarSectionTitle extends React.PureComponent {
           return (
             <Text
               data-hook={dataHook}
-              {...styles('root', { skin }, this.props)}
+              className={st(classes.root, { skin })}
               size="tiny"
               weight="bold"
             >

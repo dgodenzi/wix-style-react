@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { dataHooks } from './constants';
-import styles from './SliderHandle.st.css';
+import { st, classes } from './SliderHandle.st.css';
 import SliderThumb from './SliderThumb';
 
 class SliderHandle extends Component {
@@ -72,7 +72,7 @@ class SliderHandle extends Component {
 
     return (
       <div
-        {...styles('root', { disabled }, this.props)}
+        className={st(classes.root, { disabled })}
         style={{ left: `${offset}%` }}
         onMouseEnter={this.handleMouseEnter}
         onMouseLeave={this.handleMouseLeave}
@@ -82,7 +82,7 @@ class SliderHandle extends Component {
       >
         <SliderThumb disabled={disabled} hovered={hovered || dragging} />
         {showTooltip && value && (
-          <div data-hook={dataHooks.sliderTooltip} className={styles.tooltip}>
+          <div data-hook={dataHooks.sliderTooltip} className={classes.tooltip}>
             {value}
           </div>
         )}

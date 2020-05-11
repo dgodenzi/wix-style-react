@@ -12,7 +12,7 @@ import AdaptiveHeading from '../../utils/AdaptiveHeading';
 import DataHooks from '../dataHooks';
 import DataAttrs from '../dataAttrs';
 
-import styles from './StatisticsItem.st.css';
+import { st, classes } from './StatisticsItem.st.css';
 
 class StatisticsItem extends React.PureComponent {
   static displayName = 'StatisticsItem';
@@ -54,19 +54,19 @@ class StatisticsItem extends React.PureComponent {
     }
 
     return (
-      <div className={styles.description}>
+      <div className={classes.description}>
         <Heading ellipsis data-hook={DataHooks.description} appearance="H5">
           {description}
         </Heading>
         {subtitleContentInfo && (
           <Tooltip
             textAlign="start"
-            {...styles('tooltip', {}, this.props)}
+            className={classes.tooltip}
             dataHook={DataHooks.tooltip}
             content={subtitleContentInfo}
           >
             <InfoCircleSmall
-              className={styles.info}
+              className={classes.info}
               data-hook={DataHooks.info}
             />
           </Tooltip>
@@ -101,12 +101,12 @@ class StatisticsItem extends React.PureComponent {
     return (
       <Badge
         {...badgeProps}
-        {...styles('percentage ', { clickable: !!this.props.onClick })}
+        className={st(classes.percentage, { clickable: !!this.props.onClick })}
       >
-        <div className={styles.percentageInner}>
+        <div className={classes.percentageInner}>
           {!!percentage && (
             <span
-              className={styles.trendIndicator}
+              className={classes.trendIndicator}
               data-hook={DataHooks.trendIndicator}
             >
               {trendIcon}
@@ -136,7 +136,7 @@ class StatisticsItem extends React.PureComponent {
 
     const attrs = {
       ...this._getFocusableProps(),
-      ...styles('item', { clickable: !!onClick }, this.props),
+      className: st(classes.item, { clickable: !!onClick }, className),
       'data-hook': DataHooks.stat,
       onKeyDown: onClick ? this._getSpaceOrEnterHandler(onClick) : undefined,
       onClick,

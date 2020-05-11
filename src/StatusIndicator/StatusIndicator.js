@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import styles from './StatusIndicator.st.css';
+import { st, classes } from './StatusIndicator.st.css';
 import Tooltip from '../Tooltip';
 import FormFieldWarningFilled from 'wix-ui-icons-common/system/FormFieldWarningFilled';
 import FormFieldErrorFilled from 'wix-ui-icons-common/system/FormFieldErrorFilled';
@@ -23,11 +23,17 @@ class StatusIndicator extends React.PureComponent {
   };
 
   render() {
-    const { dataHook, status, message, tooltipPlacement } = this.props;
+    const {
+      dataHook,
+      status,
+      message,
+      tooltipPlacement,
+      className,
+    } = this.props;
 
     return (
       <div
-        {...styles('root', { status }, this.props)}
+        className={st(classes.root, { status }, className)}
         data-hook={dataHook}
         data-status={status}
       >

@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import styles from './SliderThumb.st.css';
+import { st, classes } from './SliderThumb.st.css';
 import { dataHooks } from './constants';
 import { withFocusable } from 'wix-ui-core/dist/src/hocs/Focusable/FocusableHOC';
 
@@ -9,7 +9,7 @@ class SliderThumb extends PureComponent {
 
     return (
       <div
-        {...styles('root', { disabled, hovered }, this.props)}
+        className={st(classes.root, { disabled, hovered })}
         onBlur={focusableOnBlur}
         onFocus={focusableOnFocus}
         tabIndex="0"

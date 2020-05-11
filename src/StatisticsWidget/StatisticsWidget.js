@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import StatisticsItem from './StatisticsItem';
-import styles from './StatisticsWidget.st.css';
+import { st, classes } from './StatisticsWidget.st.css';
 
 class StatisticsWidget extends React.PureComponent {
   static displayName = 'StatisticsWidget';
@@ -53,7 +53,7 @@ class StatisticsWidget extends React.PureComponent {
     const firstFive = items.slice(0, 5);
 
     return (
-      <div className={styles.root} data-hook={dataHook}>
+      <div className={st(classes.root)} data-hook={dataHook}>
         {firstFive.map(this._renderStat)}
       </div>
     );

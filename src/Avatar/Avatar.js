@@ -113,7 +113,7 @@ class Avatar extends React.PureComponent {
                   }}
                   className={classNames(
                     classes.avatar,
-                    styles[`color${capitalize(calculatedColor)}`],
+                    classes[`color${capitalize(calculatedColor)}`],
                   )}
                 />
               </div>

@@ -165,7 +165,7 @@ class CardGalleryItem extends React.PureComponent {
     return (
       <Proportion dataHook={dataHook}>
         <div
-          className={styles(classes.root, { withFooter: !!this._hasFooter() })}
+          className={st(classes.root, { withFooter: !!this._hasFooter() })}
           onMouseEnter={this._onMouseEnter}
           onMouseLeave={this._onMouseLeave}
           onClick={primaryActionProps.onClick}

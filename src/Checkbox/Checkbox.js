@@ -39,7 +39,6 @@ class Checkbox extends React.PureComponent {
       errorMessage,
       selectionArea,
       vAlign,
-      hover,
       size,
       onChange,
       children,
@@ -55,7 +54,7 @@ class Checkbox extends React.PureComponent {
         className={st(
           classes.root,
           {
-            vAlign,
+            valign: vAlign,
             selectionArea,
             disabled,
             error: hasError && !disabled,

@@ -74,7 +74,7 @@ class Button extends PureComponent {
             {...rest}
             {...generateDataAttr(this.props, ['skin', 'size', 'priority'])}
             className={st(
-              st.root,
+              classes.root,
               { fluid: fullWidth, skin, priority, size },
               className,
             )}

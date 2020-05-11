@@ -90,7 +90,7 @@ class FillButton extends React.PureComponent {
         dataHook={dataHook}
         size="small"
       >
-        <Proportion className={styles.proportion}>
+        <Proportion className={classes.proportion}>
           <button
             {...rest}
             className={st(classes.root, { disabled, fill: !!background })}

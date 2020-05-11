@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { generateDataAttr } from '../utils/generateDataAttr';
 
-import styles from './TextButton.st.css';
+import { st, classes } from './TextButton.st.css';
 
 class TextButton extends PureComponent {
   static displayName = 'TextButton';

@@ -2,7 +2,7 @@ import React, { cloneElement, PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { ButtonNext } from 'wix-ui-core/dist/src/components/button-next';
 import { withFocusable } from 'wix-ui-core/dist/src/hocs/Focusable/FocusableHOC';
-import styles from './ToggleButton.st.css';
+import { st, classes } from './ToggleButton.st.css';
 import Tooltip from '../Tooltip';
 import Text from '../Text';
 import { iconChildSize } from './constants';
@@ -24,7 +24,6 @@ class Icon extends PureComponent {
     } = this.props;
     const iconSize = iconChildSize[size];
     const isLabelOutside = shape === 'round' && labelPlacement === 'end';
-    const labelContainerStyle = isLabelOutside ? styles('labelContainer') : {};
 
     const [icon, label] = React.Children.map(
       children,
@@ -36,16 +35,16 @@ class Icon extends PureComponent {
     return (
       children && (
         <Tooltip
-          {...styles('tooltip')}
+          className={st(classes.tooltip)}
           {...tooltipProps}
           dataHook="toggle-button-tooltip"
           size="small"
           content={labelValue}
           disabled={tooltipDisabled || tooltipProps.disabled}
         >
-          <span {...labelContainerStyle}>
+          <span className={isLabelOutside ? classes.labelContainer : ''}>
             <div
-              {...styles('icon', { size, border }, this.props)}
+              className={st(classes.icon, { size, border })}
               tabIndex={1}
               onBlur={focusableOnBlur}
               onFocus={focusableOnFocus}
@@ -127,7 +126,7 @@ class ToggleButton extends PureComponent {
     } = this.props;
     return (
       <Text
-        {...styles('label', { placement: labelPlacement, size }, this.props)}
+        className={st(classes.label, { placement: labelPlacement, size })}
         disabled={disabled}
         dataHook="togglebutton-label"
         size="tiny"
@@ -158,7 +157,13 @@ class ToggleButton extends PureComponent {
     return (
       <ButtonNext
         {...rest}
-        {...styles('root', { disabled, selected, skin, labelPlacement, shape })}
+        className={st(classes.root, {
+          disabled,
+          selected,
+          skin,
+          labelPlacement,
+          shape,
+        })}
         tabIndex={-1}
         data-hook={dataHook}
         data-placement={labelPlacement}

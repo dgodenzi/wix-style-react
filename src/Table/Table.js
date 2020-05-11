@@ -273,7 +273,7 @@ Table.propTypes = {
    *    * `sortable`: Sets whether this field is sortable. If `true` clicking the header will call `onSortClick`
    *    * `sortDescending`: Sets what sort icon to display in the column header. `true` will show an up arrow, `false` will show a down arrow, `undefined' will show no icon
    *    * `infoTooltipProps`: Props object for column header's [tooltip](https://wix-wix-style-react.surge.sh/?selectedKind=7.%20Tooltips&selectedStory=7.1.%20Tooltip&full=0&addons=0&stories=1&panelRight=0). Note: `dataHook`, `moveBy` and `children` will not be passed to tooltip.
-   *    * `style`: Can be a CSS style `object` or a function that returns a style `object` (signature: `style(column, rowData, rowNum)`). Sets the column inline styles. Vertical padding cannot be set here, please use table's `rowVerticalPadding` prop
+   *    * `style`: Can be a CSS style `object` or a function that returns a style `object` (signature: `style(column, rowData, rowNum)`). Sets the column inline style. Vertical padding cannot be set here, please use table's `rowVerticalPadding` prop
    *    * `align`: Sets the alignment of the column content
    *    * `width`: CSS value to set the width to use for this column. No value means column will try to contain its children, if possible
    *    * `important`: Sets whether font color of the column should be stronger, more dominant

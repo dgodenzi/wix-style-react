@@ -8,7 +8,7 @@ import IconButton from '../IconButton';
 import Tooltip from '../Tooltip';
 import { dataHooks } from './constants';
 import HoverSlot from './HoverSlot';
-import style from './TableActionCell.st.css';
+import { st, classes } from './TableActionCell.st.css';
 
 /* eslint-disable react/prop-types */
 function renderPrimaryAction({ text, skin, onClick, disabled }) {
@@ -16,7 +16,7 @@ function renderPrimaryAction({ text, skin, onClick, disabled }) {
     <Button
       disabled={disabled}
       skin={skin}
-      onClick={event => {
+      onClick={(event) => {
         onClick();
 
         // Making sure we don't also trigger onRowClick
@@ -45,7 +45,7 @@ function renderVisibleActions(actions) {
         <IconButton
           skin="inverted"
           disabled={disabled}
-          onClick={event => {
+          onClick={(event) => {
             onClick();
             event.stopPropagation();
           }}
@@ -98,7 +98,7 @@ function renderPlaceholder() {
   );
 }
 
-const TableActionCell = props => {
+const TableActionCell = (props) => {
   const {
     dataHook,
     primaryAction,
@@ -115,7 +115,7 @@ const TableActionCell = props => {
   const hiddenActions = secondaryActions.slice(numOfVisibleSecondaryActions);
 
   return (
-    <span data-hook={dataHook} {...style('root', {}, props)}>
+    <span data-hook={dataHook} className={st(classes.root)}>
       {primaryAction && (
         <HoverSlot
           display="onHover"
@@ -135,7 +135,10 @@ const TableActionCell = props => {
       )}
 
       {hiddenActions.length > 0 && (
-        <div onClick={e => e.stopPropagation()} className={style.popoverMenu}>
+        <div
+          onClick={(e) => e.stopPropagation()}
+          className={classes.popoverMenu}
+        >
           <HoverSlot display="always">
             {renderHiddenActions(hiddenActions, popoverMenuProps)}
           </HoverSlot>
@@ -145,7 +148,7 @@ const TableActionCell = props => {
       {primaryAction && !(secondaryActions || []).length && (
         <HoverSlot
           display="notOnHover"
-          className={style.placeholderIcon}
+          className={classes.placeholderIcon}
           data-hook={dataHooks.tableActionCellPlaceholder}
         >
           {renderPlaceholder()}

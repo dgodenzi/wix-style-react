@@ -10,7 +10,7 @@ import {
 } from 'draft-js';
 import Tag from '../Tag';
 import { entityTypes, dataHooks } from './constants';
-import styles from './VariableInput.st.css';
+import { classes } from './VariableInput.st.css';
 
 /** Insert text in current cursor position */
 const insertText = (editorState, text) => {
@@ -165,7 +165,7 @@ const decoratorFactory = ({ tag: { size, disabled } }) => {
       },
       component: ({ offsetKey, children }) => {
         return (
-          <span data-offset-key={offsetKey} className={styles.textWrapper}>
+          <span data-offset-key={offsetKey} className={classes.textWrapper}>
             {children}
           </span>
         );
@@ -190,13 +190,13 @@ const decoratorFactory = ({ tag: { size, disabled } }) => {
           <span
             data-offset-key={offsetKey}
             contentEditable={false}
-            className={styles.tagWrapper}
+            className={classes.tagWrapper}
           >
-            <span className={styles.textWrapper}> </span>
+            <span className={classes.textWrapper}> </span>
             <Tag
               id={`variableinput-tag-${entityKey}`}
               dataHook={dataHooks.tag}
-              className={styles.tagEntity}
+              className={classes.tagEntity}
               removable={false}
               size={size}
               disabled={disabled}
@@ -204,7 +204,7 @@ const decoratorFactory = ({ tag: { size, disabled } }) => {
             >
               {text}
             </Tag>
-            <span className={styles.textWrapper}> </span>
+            <span className={classes.textWrapper}> </span>
           </span>
         );
       },

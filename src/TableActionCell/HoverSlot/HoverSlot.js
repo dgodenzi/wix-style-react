@@ -1,10 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
-import style from '../TableActionCell.st.css';
+import { st, classes } from '../TableActionCell.st.css';
 
 const HoverSlot = ({ display, children, ...props }) => (
-  <span className={classNames(style.hoverSlot, style[display])} {...props}>
+  <span className={st(classes.hoverSlot, classes[display])} {...props}>
     {children}
   </span>
 );

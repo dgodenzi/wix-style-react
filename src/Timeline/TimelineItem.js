@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import Text from '../Text';
-import styles from './TimelineItem.st.css';
+import { classes } from './TimelineItem.st.css';
 import { dataHooks } from './constants';
 
 const _isString = a => typeof a === 'string';
@@ -13,8 +13,8 @@ class TimelineItem extends React.PureComponent {
     const { idx, item, dataHook } = this.props;
 
     return (
-      <li className={styles.event} data-hook={dataHook}>
-        <div className={styles.prefix}>
+      <li className={classes.event} data-hook={dataHook}>
+        <div className={classes.prefix}>
           {item.customPrefix ? (
             <div data-hook={`${dataHooks.timelineBulletIndicator}-${idx}`}>
               {item.customPrefix}
@@ -22,23 +22,23 @@ class TimelineItem extends React.PureComponent {
           ) : (
             <div
               data-hook={`${dataHooks.timelineDefaultPrefix}-${idx}`}
-              className={styles.defaultIndicator}
+              className={classes.defaultIndicator}
             />
           )}
-          <div className={styles.line} />
+          <div className={classes.line} />
         </div>
-        <div className={styles.label}>
+        <div className={classes.label}>
           <Text
             dataHook={`${dataHooks.timelineLabel}-${idx}`}
             weight="normal"
             size="small"
-            className={styles.labelText}
+            className={classes.labelText}
           >
             {item.label}
           </Text>
           {item.labelAction ? (
             <div
-              className={styles.labelAction}
+              className={classes.labelAction}
               data-hook={`${dataHooks.timelineLabelAction}-${idx}`}
             >
               {item.labelAction}
@@ -46,7 +46,7 @@ class TimelineItem extends React.PureComponent {
           ) : null}
         </div>
         <div
-          className={styles.suffix}
+          className={classes.suffix}
           data-hook={`${dataHooks.timelineSuffix}-${idx}`}
         >
           {item.suffix ? (

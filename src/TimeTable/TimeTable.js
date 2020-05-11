@@ -5,7 +5,7 @@ import cloneDeep from 'lodash/cloneDeep';
 import uniqueId from 'lodash/uniqueId';
 
 import { DataHook, DataAttribute } from './constants';
-import styles from './TimeTable.st.css';
+import { st, classes } from './TimeTable.st.css';
 import SortableList from '../SortableList';
 import DragDropContextProvider from '../DragDropContextProvider';
 import AddItem from '../AddItem';
@@ -113,7 +113,7 @@ class TimeTable extends React.PureComponent {
   };
 
   _renderHeader = () => (
-    <div className={styles.headerContainer}>
+    <div className={classes.headerContainer}>
       {this.props.columns.map(
         (
           {
@@ -127,12 +127,12 @@ class TimeTable extends React.PureComponent {
         ) => (
           <div
             key={index}
-            {...styles(styles.header, { active, disabled, droppable })}
+            className={st(classes.header, { active, disabled, droppable })}
           >
-            <div data-hook={DataHook.Title} className={styles.title}>
+            <div data-hook={DataHook.Title} className={classes.title}>
               {title}
             </div>
-            <div data-hook={DataHook.Subtitle} className={styles.subtitle}>
+            <div data-hook={DataHook.Subtitle} className={classes.subtitle}>
               {subtitle}
             </div>
           </div>
@@ -146,7 +146,7 @@ class TimeTable extends React.PureComponent {
     const { sortableListItems, addButtonColumnIndex, groupName } = this.state;
 
     return (
-      <div className={styles.contentContainer}>
+      <div className={classes.contentContainer}>
         <DragDropContextProvider>
           {columns.map(
             ({ active, disabled, droppable = !disabled }, columnIndex) => {
@@ -160,7 +160,7 @@ class TimeTable extends React.PureComponent {
                   data-hook={DataHook.Column}
                   onMouseEnter={() => this._handleMouseEnter(columnIndex)}
                   onMouseLeave={this._handleMouseLeave}
-                  {...styles('column', {
+                  className={st(classes.column, {
                     addItemEnabled,
                     addItemVisible,
                     droppable,
@@ -173,7 +173,7 @@ class TimeTable extends React.PureComponent {
                 >
                   <SortableList
                     usePortal
-                    className={styles.content}
+                    className={classes.content}
                     groupName={groupName}
                     onDragStart={this._handleDragStart}
                     onDragEnd={this._handleDragEnd}
@@ -198,12 +198,12 @@ class TimeTable extends React.PureComponent {
   };
 
   render() {
-    const { dataHook, height, ...otherProps } = this.props;
+    const { dataHook, height } = this.props;
     const { dragging } = this.state;
 
     return (
       <div
-        {...styles('root', { dragging }, otherProps)}
+        className={st(classes.root, { dragging })}
         style={{ height }}
         data-hook={dataHook}
       >
@@ -220,7 +220,7 @@ class TimeTable extends React.PureComponent {
   }) => (
     <div
       data-hook={DataHook.Item}
-      {...styles(styles.item, { isPlaceholder })}
+      className={st(classes.item, { isPlaceholder })}
       style={previewStyles}
       {...{
         [DataAttribute.ItemDraggable]: draggable,
@@ -239,13 +239,13 @@ class TimeTable extends React.PureComponent {
 
   _renderAddItemButton = columnIndex => (
     <AddItem
-      className={styles.addItemButton}
+      className={classes.addItemButton}
       dataHook={DataHook.AddItemButton}
       showIcon={false}
       onClick={() => this.props.onAdd(columnIndex)}
     >
-      <span className={styles.addItemLabel}>
-        <AddSmallIcon className={styles.addItemIcon} size="18px" />
+      <span className={classes.addItemLabel}>
+        <AddSmallIcon className={classes.addItemIcon} size="18px" />
         {this.props.addItemButtonLabel}
       </span>
     </AddItem>

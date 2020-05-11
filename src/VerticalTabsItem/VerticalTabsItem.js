@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Text from '../Text';
 import TextButton from '../TextButton';
-import styles from './VerticalTabsItem.st.css';
+import { st, classes } from './VerticalTabsItem.st.css';
 import VerticalTabsContext from '../VerticalTabs/VerticalTabsContext';
 
 /** Internal Component to be used by VerticalTabs */
@@ -67,7 +67,7 @@ class VerticalTabsItem extends React.PureComponent {
     return React.cloneElement(prefixIcon, {
       size: size === 'medium' ? 24 : 18,
       'data-hook': 'vertical-tabs-item-prefix-icon',
-      ...styles('prefixIcon', { action: type === 'action' }, this.props),
+      className: st(classes.prefixIcon, { action: type === 'action' }),
     });
   }
 
@@ -76,7 +76,7 @@ class VerticalTabsItem extends React.PureComponent {
     const { size } = this.context;
     return React.cloneElement(suffixIcon, {
       size: size === 'medium' ? 24 : 18,
-      className: styles.suffixIcon,
+      className: classes.suffixIcon,
       'data-hook': 'vertical-tabs-item-suffix-icon',
     });
   }
@@ -95,18 +95,14 @@ class VerticalTabsItem extends React.PureComponent {
       !!id && !!this.context.activeTabId && id === this.context.activeTabId;
     return (
       <div
-        {...styles(
-          'root',
-          {
-            disabled,
-            action: type === 'action',
-            title: type === 'title',
-            suffixIcon: !!suffixIcon,
-            prefixIcon: !!prefixIcon,
-            selected,
-          },
-          this.props,
-        )}
+        className={st(classes.root, {
+          disabled,
+          action: type === 'action',
+          title: type === 'title',
+          suffixIcon: !!suffixIcon,
+          prefixIcon: !!prefixIcon,
+          selected,
+        })}
         id={id}
         tabIndex={tabIndex}
         ref={ref => (this.innerComponentRef = ref)}

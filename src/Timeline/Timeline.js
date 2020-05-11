@@ -1,17 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import styles from './Timeline.st.css';
+import { st, classes } from './Timeline.st.css';
 import { dataHooks } from './constants';
 import TimelineItem from './TimelineItem';
 
 /** A timeline is a display of a list of events */
 class Timeline extends React.PureComponent {
   render() {
-    const { dataHook, items } = this.props;
+    const { dataHook, items, className } = this.props;
 
     return (
-      <ul {...styles('root', {}, this.props)} data-hook={dataHook}>
+      <ul className={st(classes.root, className)} data-hook={dataHook}>
         {items.map((item, idx) => (
           <TimelineItem
             key={idx}

@@ -1,10 +1,10 @@
 import React from 'react';
 import TableActionCell from 'wix-style-react/TableActionCell';
 
-import style from '../TableActionCell.story.st.css';
+import { classes } from '../TableActionCell.story.st.css';
 
 const Example = () => (
-  <div className={style.exampleRow}>
+  <div className={classes.exampleRow}>
     <TableActionCell
       dataHook="story-primary-white"
       primaryAction={{

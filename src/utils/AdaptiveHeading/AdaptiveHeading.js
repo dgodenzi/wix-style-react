@@ -5,7 +5,7 @@ import Heading from '../../Heading';
 import Tooltip from '../../Tooltip';
 
 import DataHooks from './dataHooks';
-import styles from './AdaptiveHeading.st.css';
+import { st, classes } from './AdaptiveHeading.st.css';
 
 /** AdaptiveHeading */
 class AdaptiveHeading extends React.PureComponent {
@@ -45,8 +45,8 @@ class AdaptiveHeading extends React.PureComponent {
             appearance={appearance}
             light={light}
           >
-            <span className={styles.headerShort}>&nbsp;</span>
-            <span data-hook={DataHooks.text} className={styles.headerFull}>
+            <span className={classes.headerShort}>&nbsp;</span>
+            <span data-hook={DataHooks.text} className={classes.headerFull}>
               {text}
             </span>
           </Heading>
@@ -68,19 +68,19 @@ class AdaptiveHeading extends React.PureComponent {
     if (emptyLast) {
       return (
         <Heading
-          {...styles('headerWrapper', { appearance }, this.props)}
+          className={st(classes.headerWrapper, { appearance })}
           dataHook={dataHook}
           appearance={appearance}
           light={light}
         >
-          <div className={styles.headerShort}>
+          <div className={classes.headerShort}>
             <div
               aria-hidden="true"
-              {...styles('headerWrapper', { appearance }, this.props)}
+              className={st(classes.headerWrapper, { appearance })}
             >
-              <span className={styles.headerShort}>&nbsp;</span>
+              <span className={classes.headerShort}>&nbsp;</span>
               <span
-                className={styles.headerFull}
+                className={classes.headerFull}
                 data-hook={DataHooks.textInShort}
                 title={text}
               >
@@ -88,7 +88,7 @@ class AdaptiveHeading extends React.PureComponent {
               </span>
             </div>
           </div>
-          <span data-hook={DataHooks.text} className={styles.headerFull}>
+          <span data-hook={DataHooks.text} className={classes.headerFull}>
             {text}
           </span>
         </Heading>
@@ -97,23 +97,23 @@ class AdaptiveHeading extends React.PureComponent {
 
     return (
       <Heading
-        {...styles('headerWrapper', { appearance }, this.props)}
+        className={st(classes.headerWrapper, { appearance })}
         dataHook={dataHook}
         appearance={appearance}
         light={light}
       >
-        <div className={styles.headerShort}>
+        <div className={classes.headerShort}>
           <span
             data-hook={DataHooks.textInShort}
             aria-hidden="true"
             title={text}
           >
             <Tooltip content={text}>
-              <div className={styles.ellipsis}>{textInShort}</div>
+              <div className={classes.ellipsis}>{textInShort}</div>
             </Tooltip>
           </span>
         </div>
-        <span data-hook={DataHooks.text} className={styles.headerFull}>
+        <span data-hook={DataHooks.text} className={classes.headerFull}>
           {text}
         </span>
       </Heading>

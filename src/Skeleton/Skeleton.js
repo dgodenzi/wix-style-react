@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from './Skeleton.st.css';
+import { st, classes } from './Skeleton.st.css';
 import { dataHooks } from './constants';
 
 /**
@@ -9,25 +9,25 @@ import { dataHooks } from './constants';
  */
 class Skeleton extends React.PureComponent {
   render() {
-    const { dataHook, content, alignment, spacing } = this.props;
+    const { dataHook, content, alignment, spacing, className } = this.props;
     return (
       <div
         data-hook={dataHook}
         data-alignment={alignment}
         data-spacing={spacing}
-        {...styles('root', { alignment, spacing }, this.props)}
+        className={st(classes.root, { alignment, spacing }, className)}
       >
         {content.map(({ type, size }, key) => (
           <div
             key={key}
             data-hook={dataHooks.line}
-            {...styles('line', { alignment, spacing }, this.props)}
+            className={st(classes.line, { alignment, spacing })}
           >
             <div
               data-hook={dataHooks.chunk}
               data-type={type}
               data-size={size}
-              {...styles('chunk', { size }, this.props)}
+              className={st(classes.chunk, { size })}
             />
           </div>
         ))}

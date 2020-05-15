@@ -108,6 +108,7 @@ class Badge extends React.PureComponent {
         {...this._getFocusableProps()}
         className={st(classes.root, { clickable: !!onClick, ...rest })}
         {...generateDataAttr(this.props, ['type', 'skin', 'size', 'uppercase'])}
+        data-is-inverted={this.props['data-is-inverted']}
         data-clickable={!!onClick}
       >
         {prefixIcon &&

@@ -27,7 +27,7 @@ class SidebarSectionTitle extends React.PureComponent {
 
           return (
             <Text
-              data-hook={dataHook}
+              dataHook={dataHook}
               className={st(classes.root, { skin })}
               size="tiny"
               weight="bold"

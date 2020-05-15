@@ -121,7 +121,7 @@ class BarChart extends React.PureComponent {
           showText,
         })}
         <div className={classes.description}>
-          <Heading ellipsis data-hook={dataHooks.description} appearance="H5">
+          <Heading ellipsis dataHook={dataHooks.description} appearance="H5">
             {showText && description}
           </Heading>
         </div>

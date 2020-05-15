@@ -339,6 +339,7 @@ class DropdownBase extends React.PureComponent {
 
     return (
       <Popover
+        {...this.props}
         animate={animate}
         dataHook={dataHook}
         shown={open}

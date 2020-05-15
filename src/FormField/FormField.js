@@ -34,7 +34,7 @@ const charactersLeft = lengthLeft => {
       size={SIZES.small}
       weight={WEIGHTS.normal}
       {...colorProps}
-      data-hook="formfield-counter"
+      dataHook="formfield-counter"
       children={lengthLeft}
     />
   );

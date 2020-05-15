@@ -55,7 +55,7 @@ class StatisticsItem extends React.PureComponent {
 
     return (
       <div className={classes.description}>
-        <Heading ellipsis data-hook={DataHooks.description} appearance="H5">
+        <Heading ellipsis dataHook={DataHooks.description} appearance="H5">
           {description}
         </Heading>
         {subtitleContentInfo && (

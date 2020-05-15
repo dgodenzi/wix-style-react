@@ -139,7 +139,7 @@ class AccordionItem extends React.PureComponent {
             {title && (
               <div className={classes.title} data-hook="titleContainer">
                 {typeof title === 'string' ? (
-                  <Text data-hook="title" ellipsis weight="normal">
+                  <Text dataHook="title" ellipsis weight="normal">
                     {title}
                   </Text>
                 ) : (

@@ -154,7 +154,10 @@ class InputWithOptions extends Component {
   _renderDropdownLayout() {
     const inputOnlyProps = omit(['tabIndex'], Input.propTypes);
     const dropdownProps = Object.assign(
-      omit(Object.keys(inputOnlyProps).concat(['dataHook']), this.props),
+      omit(
+        Object.keys(inputOnlyProps).concat(['dataHook', 'onClickOutside']),
+        this.props,
+      ),
       this.dropdownAdditionalProps(),
     );
 

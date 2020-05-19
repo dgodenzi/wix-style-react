@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import CodeExample from 'wix-storybook-utils/CodeExample';
 
 import { getTestStoryKind } from '../../../stories/storiesHierarchy';
-import { testStories, storySettings } from './storySettings';
+import { testStories, storySettings } from '../docs/storySettings';
 import { st, classes } from './TableActionCell.story.st.css';
 
 import PrimaryBlueExample from '../docs/examples/PrimaryBlueExample';

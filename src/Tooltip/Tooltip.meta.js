@@ -3,6 +3,6 @@ import Registry from '@ui-autotools/registry';
 
 const metadata = Registry.getComponentMetadata(Tooltip);
 
-metadata.exportedFrom({
+metadata.exportInfo = {
   path: 'src/Tooltip/Tooltip.js',
-});
+};

@@ -3,6 +3,6 @@ import Registry from '@ui-autotools/registry';
 
 const metadata = Registry.getComponentMetadata(FillPreview);
 
-metadata.exportedFrom({
+metadata.exportInfo = {
   path: 'src/FillPreview/FillPreview.js',
-});
+};

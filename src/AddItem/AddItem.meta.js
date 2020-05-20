@@ -3,6 +3,6 @@ import Registry from '@ui-autotools/registry';
 
 const metadata = Registry.getComponentMetadata(AddItem);
 
-metadata.exportedFrom({
+metadata.exportInfo = {
   path: 'src/AddItem/AddItem.js',
-});
+};

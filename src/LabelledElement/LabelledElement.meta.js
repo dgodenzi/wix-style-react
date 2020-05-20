@@ -3,6 +3,6 @@ import Registry from '@ui-autotools/registry';
 
 const metadata = Registry.getComponentMetadata(LabelledElement);
 
-metadata.exportedFrom({
+metadata.exportInfo = {
   path: 'src/LabelledElement/LabelledElement.js',
-});
+};

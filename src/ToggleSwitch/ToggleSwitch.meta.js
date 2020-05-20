@@ -3,6 +3,6 @@ import Registry from '@ui-autotools/registry';
 
 const metadata = Registry.getComponentMetadata(ToggleSwitch);
 
-metadata.exportedFrom({
+metadata.exportInfo = {
   path: 'src/ToggleSwitch/ToggleSwitch.js',
-});
+};

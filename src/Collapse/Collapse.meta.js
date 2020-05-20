@@ -3,6 +3,6 @@ import Registry from '@ui-autotools/registry';
 
 const metadata = Registry.getComponentMetadata(Collapse);
 
-metadata.exportedFrom({
+metadata.exportInfo = {
   path: 'src/Collapse/Collapse.js',
-});
+};

@@ -3,6 +3,6 @@ import Registry from '@ui-autotools/registry';
 
 const metadata = Registry.getComponentMetadata(ImageViewer);
 
-metadata.exportedFrom({
+metadata.exportInfo = {
   path: 'src/ImageViewer/ImageViewer.js',
-});
+};

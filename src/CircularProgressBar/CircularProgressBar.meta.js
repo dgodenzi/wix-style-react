@@ -3,6 +3,6 @@ import Registry from '@ui-autotools/registry';
 
 const metadata = Registry.getComponentMetadata(CircularProgressBar);
 
-metadata.exportedFrom({
+metadata.exportInfo = {
   path: 'src/CircularProgressBar/CircularProgressBar.js',
-});
+};

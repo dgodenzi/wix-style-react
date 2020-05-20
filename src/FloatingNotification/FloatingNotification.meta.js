@@ -3,6 +3,6 @@ import Registry from '@ui-autotools/registry';
 
 const metadata = Registry.getComponentMetadata(FloatingNotification);
 
-metadata.exportedFrom({
+metadata.exportInfo = {
   path: 'src/FloatingNotification/FloatingNotification.js',
-});
+};

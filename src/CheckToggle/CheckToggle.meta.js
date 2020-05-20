@@ -3,6 +3,6 @@ import Registry from '@ui-autotools/registry';
 
 const metadata = Registry.getComponentMetadata(CheckToggle);
 
-metadata.exportedFrom({
+metadata.exportInfo = {
   path: 'src/CheckToggle/CheckToggle.js',
-});
+};

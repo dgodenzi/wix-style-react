@@ -3,6 +3,6 @@ import Registry from '@ui-autotools/registry';
 
 const metadata = Registry.getComponentMetadata(CloseButton);
 
-metadata.exportedFrom({
+metadata.exportInfo = {
   path: 'src/CloseButton/CloseButton.js',
-});
+};

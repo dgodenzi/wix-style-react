@@ -3,6 +3,6 @@ import Registry from '@ui-autotools/registry';
 
 const metadata = Registry.getComponentMetadata(Calendar);
 
-metadata.exportedFrom({
+metadata.exportInfo = {
   path: 'src/Calendar/Calendar.js',
-});
+};

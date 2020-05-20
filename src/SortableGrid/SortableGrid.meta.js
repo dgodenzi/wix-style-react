@@ -3,6 +3,6 @@ import Registry from '@ui-autotools/registry';
 
 const metadata = Registry.getComponentMetadata(SortableGrid);
 
-metadata.exportedFrom({
+metadata.exportInfo = {
   path: 'src/SortableGrid/SortableGrid.js',
-});
+};

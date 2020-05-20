@@ -3,6 +3,6 @@ import Registry from '@ui-autotools/registry';
 
 const metadata = Registry.getComponentMetadata(MarketingLayout);
 
-metadata.exportedFrom({
+metadata.exportInfo = {
   path: 'src/MarketingLayout/MarketingLayout.js',
-});
+};

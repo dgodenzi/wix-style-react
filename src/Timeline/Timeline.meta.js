@@ -3,6 +3,6 @@ import Registry from '@ui-autotools/registry';
 
 const metadata = Registry.getComponentMetadata(Timeline);
 
-metadata.exportedFrom({
+metadata.exportInfo = {
   path: 'src/Timeline/Timeline.js',
-});
+};

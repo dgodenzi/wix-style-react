@@ -3,6 +3,6 @@ import Registry from '@ui-autotools/registry';
 
 const metadata = Registry.getComponentMetadata(Breadcrumbs);
 
-metadata.exportedFrom({
+metadata.exportInfo = {
   path: 'src/Breadcrumbs/Breadcrumbs.js',
-});
+};

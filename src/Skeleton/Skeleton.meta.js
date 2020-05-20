@@ -3,6 +3,6 @@ import Registry from '@ui-autotools/registry';
 
 const metadata = Registry.getComponentMetadata(Skeleton);
 
-metadata.exportedFrom({
+metadata.exportInfo = {
   path: 'src/Skeleton/Skeleton.js',
-});
+};

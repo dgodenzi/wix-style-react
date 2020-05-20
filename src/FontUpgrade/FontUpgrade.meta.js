@@ -3,6 +3,6 @@ import Registry from '@ui-autotools/registry';
 
 const metadata = Registry.getComponentMetadata(FontUpgrade);
 
-metadata.exportedFrom({
+metadata.exportInfo = {
   path: 'src/FontUpgrade/FontUpgrade.js',
-});
+};

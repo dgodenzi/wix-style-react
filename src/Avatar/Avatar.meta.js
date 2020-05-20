@@ -3,6 +3,6 @@ import Registry from '@ui-autotools/registry';
 
 const metadata = Registry.getComponentMetadata(Avatar);
 
-metadata.exportedFrom({
+metadata.exportInfo = {
   path: 'src/Avatar/Avatar.js',
-});
+};

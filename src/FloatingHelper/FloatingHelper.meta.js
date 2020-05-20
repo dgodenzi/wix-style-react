@@ -3,6 +3,6 @@ import Registry from '@ui-autotools/registry';
 
 const metadata = Registry.getComponentMetadata(FloatingHelper);
 
-metadata.exportedFrom({
+metadata.exportInfo = {
   path: 'src/FloatingHelper/FloatingHelper.js',
-});
+};

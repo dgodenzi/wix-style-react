@@ -3,6 +3,6 @@ import Registry from '@ui-autotools/registry';
 
 const metadata = Registry.getComponentMetadata(AutoCompleteWithLabel);
 
-metadata.exportedFrom({
+metadata.exportInfo = {
   path: 'src/AutoCompleteWithLabel/AutoCompleteWithLabel.js',
-});
+};

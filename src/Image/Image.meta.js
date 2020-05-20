@@ -3,6 +3,6 @@ import Registry from '@ui-autotools/registry';
 
 const metadata = Registry.getComponentMetadata(Image);
 
-metadata.exportedFrom({
+metadata.exportInfo = {
   path: 'src/Image/Image.js',
-});
+};

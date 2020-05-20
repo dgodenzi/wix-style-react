@@ -3,6 +3,6 @@ import Registry from '@ui-autotools/registry';
 
 const metadata = Registry.getComponentMetadata(RichTextInputArea);
 
-metadata.exportedFrom({
+metadata.exportInfo = {
   path: 'src/RichTextInputArea/RichTextInputArea.js',
-});
+};

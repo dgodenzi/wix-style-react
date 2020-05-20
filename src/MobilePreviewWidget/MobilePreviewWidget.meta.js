@@ -3,6 +3,6 @@ import Registry from '@ui-autotools/registry';
 
 const metadata = Registry.getComponentMetadata(MobilePreviewWidget);
 
-metadata.exportedFrom({
+metadata.exportInfo = {
   path: 'src/MobilePreviewWidget/MobilePreviewWidget.js',
-});
+};

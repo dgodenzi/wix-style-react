@@ -3,6 +3,6 @@ import Registry from '@ui-autotools/registry';
 
 const metadata = Registry.getComponentMetadata(EndorseContentLayout);
 
-metadata.exportedFrom({
+metadata.exportInfo = {
   path: 'src/EndorseContentLayout/EndorseContentLayout.js',
-});
+};

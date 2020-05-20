@@ -3,6 +3,6 @@ import Registry from '@ui-autotools/registry';
 
 const metadata = Registry.getComponentMetadata(Proportion);
 
-metadata.exportedFrom({
+metadata.exportInfo = {
   path: 'src/Proportion/Proportion.js',
-});
+};

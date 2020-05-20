@@ -3,6 +3,6 @@ import Registry from '@ui-autotools/registry';
 
 const metadata = Registry.getComponentMetadata(PopoverMenu);
 
-metadata.exportedFrom({
+metadata.exportInfo = {
   path: 'src/PopoverMenu/PopoverMenu.js',
-});
+};

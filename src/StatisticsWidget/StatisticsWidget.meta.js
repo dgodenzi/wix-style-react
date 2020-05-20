@@ -3,6 +3,6 @@ import Registry from '@ui-autotools/registry';
 
 const metadata = Registry.getComponentMetadata(StatisticsWidget);
 
-metadata.exportedFrom({
+metadata.exportInfo = {
   path: 'src/StatisticsWidget/StatisticsWidget.js',
-});
+};

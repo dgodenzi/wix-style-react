@@ -3,6 +3,6 @@ import Registry from '@ui-autotools/registry';
 
 const metadata = Registry.getComponentMetadata(CustomModalLayout);
 
-metadata.exportedFrom({
+metadata.exportInfo = {
   path: 'src/CustomModalLayout/CustomModalLayout.js',
-});
+};

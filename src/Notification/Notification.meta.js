@@ -3,6 +3,6 @@ import Registry from '@ui-autotools/registry';
 
 const metadata = Registry.getComponentMetadata(Notification);
 
-metadata.exportedFrom({
+metadata.exportInfo = {
   path: 'src/Notification/Notification.js',
-});
+};

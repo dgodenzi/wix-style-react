@@ -3,6 +3,6 @@ import Registry from '@ui-autotools/registry';
 
 const metadata = Registry.getComponentMetadata(ModalMobileLayout);
 
-metadata.exportedFrom({
+metadata.exportInfo = {
   path: 'src/ModalMobileLayout/ModalMobileLayout.js',
-});
+};

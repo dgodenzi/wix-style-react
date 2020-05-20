@@ -3,6 +3,6 @@ import Registry from '@ui-autotools/registry';
 
 const metadata = Registry.getComponentMetadata(Dropdown);
 
-metadata.exportedFrom({
+metadata.exportInfo = {
   path: 'src/Dropdown/Dropdown.js',
-});
+};

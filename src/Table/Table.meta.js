@@ -3,6 +3,6 @@ import Registry from '@ui-autotools/registry';
 
 const metadata = Registry.getComponentMetadata(Table);
 
-metadata.exportedFrom({
+metadata.exportInfo = {
   path: 'src/Table/Table.js',
-});
+};

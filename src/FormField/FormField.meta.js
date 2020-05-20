@@ -3,6 +3,6 @@ import Registry from '@ui-autotools/registry';
 
 const metadata = Registry.getComponentMetadata(FormField);
 
-metadata.exportedFrom({
+metadata.exportInfo = {
   path: 'src/FormField/FormField.js',
-});
+};

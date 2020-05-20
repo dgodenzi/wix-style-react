@@ -3,6 +3,6 @@ import Registry from '@ui-autotools/registry';
 
 const metadata = Registry.getComponentMetadata(Pagination);
 
-metadata.exportedFrom({
+metadata.exportInfo = {
   path: 'src/Pagination/Pagination.js',
-});
+};

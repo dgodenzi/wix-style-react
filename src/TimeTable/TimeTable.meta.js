@@ -3,6 +3,6 @@ import Registry from '@ui-autotools/registry';
 
 const metadata = Registry.getComponentMetadata(TimeTable);
 
-metadata.exportedFrom({
+metadata.exportInfo = {
   path: 'src/TimeTable/TimeTable.js',
-});
+};

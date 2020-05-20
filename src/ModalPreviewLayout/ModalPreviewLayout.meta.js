@@ -3,6 +3,6 @@ import Registry from '@ui-autotools/registry';
 
 const metadata = Registry.getComponentMetadata(ModalPreviewLayout);
 
-metadata.exportedFrom({
+metadata.exportInfo = {
   path: 'src/ModalPreviewLayout/ModalPreviewLayout.js',
-});
+};

@@ -3,6 +3,6 @@ import Registry from '@ui-autotools/registry';
 
 const metadata = Registry.getComponentMetadata(Accordion);
 
-metadata.exportedFrom({
+metadata.exportInfo = {
   path: 'src/Accordion/Accordion.js',
-});
+};

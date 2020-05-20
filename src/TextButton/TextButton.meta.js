@@ -3,6 +3,6 @@ import Registry from '@ui-autotools/registry';
 
 const metadata = Registry.getComponentMetadata(TextButton);
 
-metadata.exportedFrom({
+metadata.exportInfo = {
   path: 'src/TextButton/TextButton.js',
-});
+};

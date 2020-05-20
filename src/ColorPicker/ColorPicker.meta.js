@@ -3,6 +3,6 @@ import Registry from '@ui-autotools/registry';
 
 const metadata = Registry.getComponentMetadata(ColorPicker);
 
-metadata.exportedFrom({
+metadata.exportInfo = {
   path: 'src/ColorPicker/ColorPicker.js',
-});
+};

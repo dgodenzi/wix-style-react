@@ -3,6 +3,6 @@ import Registry from '@ui-autotools/registry';
 
 const metadata = Registry.getComponentMetadata(MessageModalLayout);
 
-metadata.exportedFrom({
+metadata.exportInfo = {
   path: 'src/MessageModalLayout/MessageModalLayout.js',
-});
+};

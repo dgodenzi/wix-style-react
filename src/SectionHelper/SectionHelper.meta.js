@@ -3,6 +3,6 @@ import Registry from '@ui-autotools/registry';
 
 const metadata = Registry.getComponentMetadata(SectionHelper);
 
-metadata.exportedFrom({
+metadata.exportInfo = {
   path: 'src/SectionHelper/SectionHelper.js',
-});
+};

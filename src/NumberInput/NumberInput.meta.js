@@ -3,6 +3,6 @@ import Registry from '@ui-autotools/registry';
 
 const metadata = Registry.getComponentMetadata(NumberInput);
 
-metadata.exportedFrom({
+metadata.exportInfo = {
   path: 'src/NumberInput/NumberInput.js',
-});
+};

@@ -11,7 +11,7 @@ export default class FloatingHelper extends React.PureComponent<
 export interface ClosablePopoverProps {
   opened?: boolean;
   initiallyOpened?: boolean;
-  target: node.isRequired;
+  target: React.ReactNode;
   onOpen?: Function;
   onClose?: Function;
   closeOnMouseLeave?: boolean;

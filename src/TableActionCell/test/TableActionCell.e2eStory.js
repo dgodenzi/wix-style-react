@@ -4,7 +4,7 @@ import CodeExample from 'wix-storybook-utils/CodeExample';
 
 import { getTestStoryKind } from '../../../stories/storiesHierarchy';
 import { testStories, storySettings } from '../docs/storySettings';
-import { st, classes } from './TableActionCell.story.st.css';
+import { st, classes } from '../docs/TableActionCell.story.st.css';
 
 import PrimaryBlueExample from '../docs/examples/PrimaryBlueExample';
 import PrimaryWhiteExample from '../docs/examples/PrimaryWhiteExample';

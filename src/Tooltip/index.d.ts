@@ -8,6 +8,7 @@ export type TooltipSize = 'small' | 'medium';
 
 export interface TooltipProps {
   dataHook?: string;
+  className?: string;
   content?: React.ReactNode;
   disabled?: boolean;
   textAlign?: TooltipTextAlign;
@@ -27,4 +28,4 @@ export interface TooltipProps {
   open?: () => void;
 }
 
-export default class Tooltip extends React.PureComponent<TooltipProps>{}
+export default class Tooltip extends React.PureComponent<TooltipProps> {}

@@ -221,6 +221,7 @@ export default class DatePicker extends React.PureComponent {
         appendTo="parent"
         shown={isOpen}
         zIndex={zIndex}
+        excludeClass={classes.root}
         {...popoverProps}
       >
         <Popover.Element>

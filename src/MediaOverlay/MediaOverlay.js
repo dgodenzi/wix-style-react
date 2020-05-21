@@ -24,6 +24,8 @@ class MediaOverlay extends React.PureComponent {
     /** Hook for testing purposes. */
     dataHook: PropTypes.string,
 
+    className: PropTypes.string,
+
     /** Default overlay state skin. */
     skin: PropTypes.oneOf(['none', 'gradient', 'dark']),
 
@@ -231,7 +233,7 @@ class MediaOverlay extends React.PureComponent {
   };
 
   render() {
-    const { dataHook, skin, media, onClick } = this.props;
+    const { dataHook, skin, media, onClick, className } = this.props;
     const isMediaImageUrl = typeof media === 'string';
     const Component = onClick ? 'button' : 'div';
 
@@ -242,7 +244,7 @@ class MediaOverlay extends React.PureComponent {
         onMouseLeave={this._onMouseLeave}
         onClick={onClick}
         {...this._getFocusProps()}
-        className={st(classes.root, { clickable: !!onClick })}
+        className={st(classes.root, { clickable: !!onClick }, className)}
         data-skin={skin}
         data-hoverskin={this._getHoverSkin()}
         style={{ backgroundImage: isMediaImageUrl && `url(${media})` }}

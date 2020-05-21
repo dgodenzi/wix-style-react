@@ -5,7 +5,7 @@ import * as Composite from '../Composite';
 import CloseButton from '../CloseButton';
 import TextLabel from './TextLabel';
 import ActionButton from './ActionButton';
-import styles from './Notification.st.css';
+import { st, classes } from './Notification.st.css';
 import StatusComplete from 'wix-ui-icons-common/StatusComplete';
 import StatusWarning from 'wix-ui-icons-common/StatusWarning';
 import StatusAlert from 'wix-ui-icons-common/StatusAlert';
@@ -23,9 +23,9 @@ const animationsTimeouts = {
 };
 
 const themeIcon = {
-  error: <StatusAlert className={styles.iconStyling} />,
-  success: <StatusComplete className={styles.iconStyling} />,
-  warning: <StatusWarning className={styles.iconStyling} />,
+  error: <StatusAlert className={classes.iconStyling} />,
+  success: <StatusComplete className={classes.iconStyling} />,
+  warning: <StatusWarning className={classes.iconStyling} />,
 };
 
 function FirstChild(props) {
@@ -132,17 +132,17 @@ class Notification extends React.PureComponent {
     return (
       <CSSTransition
         classNames={{
-          enter: styles.notificationAnimationEnter,
-          enterActive: styles.notificationAnimationEnterActive,
-          exit: styles.notificationAnimationExit,
-          exitActive: styles.notificationAnimationExitActive,
+          enter: classes.notificationAnimationEnter,
+          enterActive: classes.notificationAnimationEnterActive,
+          exit: classes.notificationAnimationExit,
+          exitActive: classes.notificationAnimationExitActive,
         }}
         timeout={animationsTimeouts}
       >
         <div
           data-hook={dataHooks.notificationWrapper}
           style={{ zIndex }}
-          className={styles.notification}
+          className={classes.notification}
           role="alert"
           aria-labelledby="notification-label"
           aria-live="polite"
@@ -150,13 +150,13 @@ class Notification extends React.PureComponent {
           {themeIcon[theme]}
           <div
             id="notification-label"
-            className={styles.label}
+            className={classes.label}
             children={childrenComponents.label}
           />
 
           {childrenComponents.ctaButton && (
             <div
-              className={styles.button}
+              className={classes.button}
               children={childrenComponents.ctaButton}
             />
           )}
@@ -164,7 +164,7 @@ class Notification extends React.PureComponent {
           {childrenComponents.closeButton && (
             <div
               data-hook={dataHooks.notificationCloseButton}
-              className={styles.closeButton}
+              className={classes.closeButton}
               onClick={this._hideNotificationOnCloseClick}
               children={childrenComponents.closeButton}
             />
@@ -178,7 +178,7 @@ class Notification extends React.PureComponent {
     const { dataHook, theme, type } = this.props;
     return (
       <div
-        {...styles('root', { theme, type }, this.props)}
+        className={st(classes.root, { theme, type })}
         data-hook={dataHook}
         data-theme={theme}
         data-type={type}

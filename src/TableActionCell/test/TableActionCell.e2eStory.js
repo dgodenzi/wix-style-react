@@ -4,7 +4,7 @@ import CodeExample from 'wix-storybook-utils/CodeExample';
 
 import { getTestStoryKind } from '../../../stories/storiesHierarchy';
 import { testStories, storySettings } from '../docs/storySettings';
-import { st, classes } from '../docs/TableActionCell.story.st.css';
+import { classes } from '../docs/TableActionCell.story.st.css';
 
 import PrimaryBlueExample from '../docs/examples/PrimaryBlueExample';
 import PrimaryWhiteExample from '../docs/examples/PrimaryWhiteExample';
@@ -21,7 +21,7 @@ import DisabledPrimaryExample from '../docs/examples/DisabledPrimaryExample';
 const kind = getTestStoryKind(storySettings);
 
 storiesOf(kind, module).add(testStories.tableActionCell, () => (
-  <div className={st(classes.root)}>
+  <div>
     <div className={classes.example}>
       <CodeExample title="Blue primary action">
         <PrimaryBlueExample />

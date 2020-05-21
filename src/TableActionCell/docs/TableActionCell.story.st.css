@@ -5,6 +5,7 @@
 :import {
   -st-from: "../TableActionCell.st.css";
   -st-default: TableActionCell;
+  -st-named: onHover, notOnHover;
 }
 
 .root {}

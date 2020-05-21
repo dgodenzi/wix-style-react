@@ -6,6 +6,7 @@
 :import{
   -st-from: "../Tooltip/Tooltip.st.css";
   -st-default: Tooltip;
+  -st-named: arrow;
 }
 
 :vars {
@@ -98,10 +99,10 @@
   background: value(D80);
 }
 
-.modalTooltip::popover::arrow{
+.modalTooltip::popover .arrow{
   border-color: transparent value(D80) value(D80) transparent;
 }
 
-.modalTooltip::popover[data-placement]::arrow {
+.modalTooltip::popover[data-placement] .arrow {
   border-color: transparent value(D80) value(D80) transparent;
 }

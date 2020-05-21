@@ -1,7 +1,6 @@
 import * as React from 'react';
-import { ClosablePopover } from './ClosablePopover';
 
-export default class FloatingHelper extends React.PureComponent<
+export default class ClosablePopover extends React.PureComponent<
   ClosablePopoverProps
 > {
   open: () => void;

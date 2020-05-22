@@ -9,6 +9,7 @@ export interface MediaOverlayProps {
   dataHook?: string;
   hovered?: boolean;
   onClick?(): void;
+  className?: string;
 }
 
 export type MediaOverlayContentVisible = 'default' | 'hover' | 'always';

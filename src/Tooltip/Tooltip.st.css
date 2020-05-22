@@ -25,7 +25,7 @@
 
 :import {
   -st-from: "../Popover/Popover.st.css";
-  -st-named: arrow;
+  -st-named: arrow, withArrow;
 }
 
 :vars {

@@ -4,11 +4,6 @@
 }
 
 :import {
-  -st-from: "wix-ui-core/dist/src/components/popover/Popover.st.css";
-  -st-named: arrow;
-}
-
-:import {
   -st-from: 'wix-ui-core/src/mixins/calc';
   -st-default: calc;
 }
@@ -26,6 +21,11 @@
 :import {
   -st-from: '../Foundation/stylable/typography.st.css';
   -st-named: text-small-normal, text-tiny-thin;
+}
+
+:import {
+  -st-from: "../Popover/Popover.st.css";
+  -st-named: arrow;
 }
 
 :vars {

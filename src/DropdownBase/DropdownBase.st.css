@@ -1,6 +1,7 @@
 :import {
   -st-from: "../Popover/Popover.st.css";
   -st-default: Popover;
+  -st-named: popoverContent;
 }
 
 .root {
@@ -16,13 +17,13 @@
 }
 
 /* Reset width when the user define its own */
-.root:withWidth::popoverContent {
+.root:withWidth .popoverContent {
   min-width: inherit;
   width: inherit;
 }
 
 /* Add padding when an arrow is used */
-.root:withArrow::popover[data-placement*="top"]::popoverContent,
-.root:withArrow::popover[data-placement*="bottom"]::popoverContent {
+.root:withArrow::popover[data-placement*="top"] .popoverContent,
+.root:withArrow::popover[data-placement*="bottom"] .popoverContent {
   padding: 10px 0;
 }

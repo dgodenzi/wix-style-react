@@ -4,13 +4,9 @@
 }
 
 :import {
-  -st-from: "wix-ui-core/index.st.css";
-  -st-named: Popover;
-}
-
-:import {
-  -st-from: "wix-ui-core/dist/src/components/popover/Popover.st.css";
-  -st-named: arrow, withArrow;
+  -st-from: "wix-ui-core/dist/es/src/components/popover/Popover.st.css";
+  -st-default: Popover;
+  -st-named: arrow, withArrow, popoverContent;
 }
 
 :import {
@@ -30,6 +26,10 @@
 .root {
   -st-states: theme(string);
   -st-extends: Popover;
+}
+
+.popoverContent {
+  -st-mixin: popoverContent;
 }
 
 .root[data-hook*="popover-portal"] {

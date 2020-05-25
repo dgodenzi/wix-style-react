@@ -97,6 +97,7 @@ class Badge extends React.PureComponent {
       prefixIcon,
       suffixIcon,
       onClick,
+      className,
       dataHook,
       ...rest
     } = this.getProps();
@@ -106,7 +107,11 @@ class Badge extends React.PureComponent {
         data-hook={dataHook}
         onClick={onClick}
         {...this._getFocusableProps()}
-        className={st(classes.root, { clickable: !!onClick, ...rest })}
+        className={st(
+          classes.root,
+          { clickable: !!onClick, ...rest },
+          className,
+        )}
         {...generateDataAttr(this.props, ['type', 'skin', 'size', 'uppercase'])}
         data-is-inverted={this.props['data-is-inverted']}
         data-clickable={!!onClick}

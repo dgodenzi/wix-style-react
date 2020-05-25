@@ -13,6 +13,7 @@ const StepMarker = ({
   styleType,
   hovered,
   disabled,
+  className,
   ...otherProps
 }) => {
   const renderCompleted = () => <Confirm />;
@@ -26,12 +27,16 @@ const StepMarker = ({
 
   return (
     <div
-      className={st(classes.root, {
-        type,
-        styleType,
-        selected: active,
-        hovered,
-      })}
+      className={st(
+        classes.root,
+        {
+          type,
+          styleType,
+          selected: active,
+          hovered,
+        },
+        className,
+      )}
     >
       {type === StepType.Error
         ? renderError()

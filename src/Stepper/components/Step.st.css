@@ -1,5 +1,5 @@
 :import {
-  -st-from: "wix-ui-core/hocs.st.css";
+  -st-from: "wix-ui-core/hocs.es.st.css";
   -st-named: Focusable;
 }
 

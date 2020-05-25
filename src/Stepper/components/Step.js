@@ -67,6 +67,7 @@ class Step extends React.PureComponent {
       last,
       number,
       text,
+      className,
       ...otherProps
     } = this.props;
     const { isHovered, transitionSequence } = this.state;
@@ -74,13 +75,17 @@ class Step extends React.PureComponent {
 
     return (
       <button
-        className={st(classes.root, {
-          type,
-          styleType,
-          selected: active,
-          hovered: isHovered,
-          clickable: isClickable,
-        })}
+        className={st(
+          classes.root,
+          {
+            type,
+            styleType,
+            selected: active,
+            hovered: isHovered,
+            clickable: isClickable,
+          },
+          className,
+        )}
         data-hook={DataHook.Step}
         data-type={type}
         data-active={active}

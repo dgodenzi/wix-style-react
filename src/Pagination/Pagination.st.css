@@ -1,6 +1,6 @@
 :import {
-  -st-from: 'wix-ui-core/index.st.css';
-  -st-named: Pagination;
+  -st-from: 'wix-ui-core/dist/src/components/pagination/Pagination.st.css';
+  -st-default: Pagination;
 }
 
 :import {

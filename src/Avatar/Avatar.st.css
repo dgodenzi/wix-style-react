@@ -6,8 +6,8 @@
 }
 
 :import {
-  -st-from: 'wix-ui-core/index.st.css';
-  -st-named: Avatar;
+  -st-from: 'wix-ui-core/dist/src/components/avatar/avatar.st.css';
+  -st-default: Avatar;
 }
 
 :import {

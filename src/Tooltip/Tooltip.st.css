@@ -24,8 +24,8 @@
 }
 
 :import {
-  -st-from: "../Popover/Popover.st.css";
-  -st-named: arrow, withArrow;
+  -st-from: "wix-ui-core/dist/src/components/popover/Popover.st.css";
+  -st-named: arrow, withArrow, popoverContent;
 }
 
 :vars {
@@ -46,7 +46,7 @@
 
 /* Popover Content */
 
-.root::popoverContent {
+.root .popoverContent {
   border: none;
 
   border-radius: 8px;
@@ -63,7 +63,7 @@
   background: value(D10);
 }
 
-.root:size(small)::popoverContent {
+.root:size(small) .popoverContent {
   border: none;
 
   border-radius: 8px;
@@ -106,7 +106,7 @@
 .root:size(small)::popover[data-placement*="right"] .arrow  {
     display: none;
 }
-.root::popover[data-placement*="right"].root::withArrow {
+.root::popover[data-placement*="right"].withArrow {
   padding-left: calc(value(contentArrowSize) - 2px);
 }
 
@@ -124,7 +124,7 @@
   display: none;
 }
 
-.root::popover[data-placement*="left"].root::withArrow {
+.root::popover[data-placement*="left"].withArrow {
   padding-right: calc(value(contentArrowSize) - 2px);
 }
 
@@ -142,7 +142,7 @@
   display: none;
 }
 
-.root::popover[data-placement*="top"].root::withArrow {
+.root::popover[data-placement*="top"].withArrow {
   padding-bottom: calc(value(contentArrowSize) - 2px);
 }
 
@@ -160,7 +160,7 @@
   display: none;
 }
 
-.root::popover[data-placement*="bottom"].root::withArrow {
+.root::popover[data-placement*="bottom"].withArrow {
   padding-top: calc(value(contentArrowSize) - 2px);
 }
 

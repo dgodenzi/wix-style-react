@@ -22,7 +22,7 @@ async function generate() {
   const gatherAllPromises = [];
   Registry.default.metadata.components.forEach(async comp => {
     gatherAllPromises.push(
-      gatherAll(comp.path).then(parsedSource => {
+      gatherAll(comp.exportInfo.path).then(parsedSource => {
         // Registry.getCompName gets a unique component id.
         const key = Registry.getCompName(comp.component);
         autodocsRegistry[key] = parsedSource;

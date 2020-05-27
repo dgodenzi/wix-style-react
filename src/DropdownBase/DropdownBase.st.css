@@ -1,6 +1,10 @@
 :import {
   -st-from: "../Popover/Popover.st.css";
   -st-default: Popover;
+}
+
+:import {
+  -st-from: "wix-ui-core/dist/src/components/popover/Popover.st.css";
   -st-named: popoverContent;
 }
 

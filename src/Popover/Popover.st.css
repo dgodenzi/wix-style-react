@@ -4,9 +4,9 @@
 }
 
 :import {
-  -st-from: "wix-ui-core/dist/es/src/components/popover/Popover.st.css";
+  -st-from: "wix-ui-core/dist/src/components/popover/Popover.st.css";
   -st-default: Popover;
-  -st-named: arrow, withArrow, popoverContent;
+  -st-named: arrow, withArrow;
 }
 
 :import {
@@ -28,15 +28,10 @@
   -st-extends: Popover;
 }
 
-.popoverContent {
-  -st-mixin: popoverContent;
-}
-
 .root[data-hook*="popover-portal"] {
   /* This will cause the container's height to stay the same */
   display: block;
 }
-
 
 /* Default styles with light theme */
 .root::popoverContent {

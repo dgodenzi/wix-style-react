@@ -9,7 +9,7 @@
 }
 
 :import {
-  -st-from: "wix-ui-core/hocs.st.css";
+  -st-from: "wix-ui-core/dist/src/hocs/Focusable/Focusable.st.css";
   -st-named: Focusable;
 }
 

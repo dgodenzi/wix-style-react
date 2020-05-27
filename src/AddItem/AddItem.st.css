@@ -24,7 +24,7 @@
 
 :import {
   -st-from: "wix-ui-core/dist/src/hocs/Focusable/Focusable.st.css";
-  -st-named: Focusable;
+  -st-default: Focusable;
 }
 
 :import {

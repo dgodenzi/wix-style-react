@@ -27,12 +27,13 @@ const PATHS_TO_CHANGE = [
 ];
 
 const WRONG_PATHS = [
+  /** temp ignore */
+  /**
   {
     regexp: /wix-ui-core\/dist\/src\/hocs\/.*\/[A-Za-z]*\.st\.css/,
     correct: 'hocs.st.css',
   },
-  /** temp ignore */
-  /** {
+  {
     regexp: /wix-ui-core\/dist\/src\/components\/.*\/[A-Za-z]*\.st\.css/,
     correct: 'index.st.css',
   }, */

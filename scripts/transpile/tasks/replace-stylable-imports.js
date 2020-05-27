@@ -24,6 +24,10 @@ const PATHS_TO_CHANGE = [
     regexp: /wix-ui-core\/hocs\.st\.css/g,
     changeTo: 'wix-ui-core/hocs.es.st.css',
   },
+  {
+    regexp: /wix-ui-core\/dist\/src\/(.*st\.css)/g,
+    changeTo: 'wix-ui-core/dist/es/src/$1',
+  },
 ];
 
 const WRONG_PATHS = [

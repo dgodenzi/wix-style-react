@@ -121,7 +121,8 @@
   transition: all .5s;
 }
 
-.root:suffix, .root:drillable {
+.root:suffix,
+.root:drillable {
   padding: 0 18px 0 24px;
 }
 

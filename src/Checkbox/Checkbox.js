@@ -54,7 +54,7 @@ class Checkbox extends React.PureComponent {
         className={st(
           classes.root,
           {
-            valign: vAlign,
+            vAlign,
             selectionArea,
             disabled,
             error: hasError && !disabled,

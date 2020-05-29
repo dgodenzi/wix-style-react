@@ -15,6 +15,8 @@ class Divider extends React.PureComponent {
     direction: PropTypes.oneOf(['horizontal', 'vertical']),
     /** Sets the color of the divider */
     skin: PropTypes.oneOf(['light', 'dark']),
+
+    className: PropTypes.string,
   };
 
   static defaultProps = {
@@ -23,12 +25,12 @@ class Divider extends React.PureComponent {
   };
 
   render() {
-    const { dataHook, direction, skin } = this.props;
+    const { dataHook, direction, skin, className } = this.props;
 
     return (
       <hr
         data-hook={dataHook}
-        className={st(classes.root, { direction, skin })}
+        className={st(classes.root, { direction, skin }, className)}
       />
     );
   }

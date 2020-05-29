@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { skins, dataHooks } from './constants';
-import { vars as colors } from '../Foundation/stylable/colors.st.css';
+import { stVars as colors } from '../Foundation/stylable/colors.st.css';
 
 import Box from '../Box';
 

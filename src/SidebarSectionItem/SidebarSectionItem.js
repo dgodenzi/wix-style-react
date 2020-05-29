@@ -69,8 +69,8 @@ class SidebarSectionItem extends React.PureComponent {
                 {
                   selected,
                   disabled,
-                  prefix,
-                  suffix,
+                  prefix: Boolean(prefix),
+                  suffix: Boolean(suffix),
                   drillable,
                   skin,
                   alwaysDisplayChevron,

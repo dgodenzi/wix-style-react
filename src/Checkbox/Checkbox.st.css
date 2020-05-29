@@ -10,8 +10,8 @@
 
 .root {
   -st-extends: Focusable;
-  -st-states: valign(enum(center, top)),
-    selectionarea(enum(none, always, hover)), disabled,
+  -st-states: vAlign(enum(center, top)),
+    selectionArea(enum(none, always, hover)), disabled,
     selection(enum(unchecked, checked, indeterminate)), checkboxhover, error;
   display: inline-flex;
   outline: none;
@@ -81,66 +81,66 @@
 }
 
 /* Vertical Align */
-.root:valign(center) .label {
+.root:vAlign(center) .label {
   align-items: center;
 }
 
-.root:valign(top) .outer {
+.root:vAlign(top) .outer {
   margin-top: 4px;
   display: flex;
 }
 
 /* Selection Area */
-.root:selectionarea(always) {
+.root:selectionArea(always) {
   background-color: value(B60);
   cursor: pointer;
   border-radius: 8px;
 }
 
-.root:selectionarea(always) {
+.root:selectionArea(always) {
   cursor: pointer;
   border-radius: 8px;
 }
 
-.root:selectionarea(always):hover,
-.root:selectionarea(hover):hover {
+.root:selectionArea(always):hover,
+.root:selectionArea(hover):hover {
   background-color: value(B50);
 }
 
-.root:selectionarea(always) .children,
-.root:selectionarea(hover) .children {
+.root:selectionArea(always) .children,
+.root:selectionArea(hover) .children {
   padding: 12px 16px 12px 12px;
 }
 
-.root:selectionarea(always) .outer,
-.root:selectionarea(hover) .outer {
+.root:selectionArea(always) .outer,
+.root:selectionArea(hover) .outer {
   cursor: pointer;
   padding: 16px 0 16px 16px;
 }
 
-.root:selectionarea(always) .outer {
+.root:selectionArea(always) .outer {
   cursor: pointer;
   padding: 16px 0 16px 16px;
 }
 
-.root:selectionarea(hover):selection(checked),
-.root:selectionarea(hover):selection(indeterminate),
-.root:selectionarea(always):selection(checked),
-.root:selectionarea(always):selection(indeterminate) {
+.root:selectionArea(hover):selection(checked),
+.root:selectionArea(hover):selection(indeterminate),
+.root:selectionArea(always):selection(checked),
+.root:selectionArea(always):selection(indeterminate) {
   background-color: value(B40);
 }
 
-.root:selectionarea(always):valign(top) .outer {
+.root:selectionArea(always):vAlign(top) .outer {
   margin-top: 0;
 }
 
-:global([dir='rtl']) .root:selectionarea(always) .children,
-:global([dir='rtl']) .root:selectionarea(hover) .children {
+:global([dir='rtl']) .root:selectionArea(always) .children,
+:global([dir='rtl']) .root:selectionArea(hover) .children {
   padding: 12px 12px 12px 16px;
 }
 
-:global([dir='rtl']) .root:selectionarea(always) .outer,
-:global([dir='rtl']) .root:selectionarea(hover) .outer {
+:global([dir='rtl']) .root:selectionArea(always) .outer,
+:global([dir='rtl']) .root:selectionArea(hover) .outer {
   padding: 16px 16px 16px 0;
 }
 
@@ -170,17 +170,17 @@
   color: value(D10-30);
 }
 
-.root:disabled:selectionarea(always) {
+.root:disabled:selectionArea(always) {
   background-color: transparent;
 }
 
-.root:disabled:selectionarea(always) .checkbox,
-.root:disabled:selectionarea(always):selection(checked),
-.root:disabled:selectionarea(always):selection(indeterminate) {
+.root:disabled:selectionArea(always) .checkbox,
+.root:disabled:selectionArea(always):selection(checked),
+.root:disabled:selectionArea(always):selection(indeterminate) {
   background-color: transparent;
 }
 
-.root:disabled:selectionarea(always) {
+.root:disabled:selectionArea(always) {
   background-color: transparent;
 }
 

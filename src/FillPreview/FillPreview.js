@@ -60,11 +60,12 @@ class FillPreview extends React.PureComponent {
       dataHook,
       aspectRatio,
       as,
+      className,
       ...rest
     } = this.props;
     const background = this._getBackground(fill);
     return (
-      <div className={st(classes.root, { selected })}>
+      <div className={st(classes.root, { selected }, className)}>
         <Proportion dataHook={dataHook} aspectRatio={aspectRatio}>
           <ButtonNext
             {...rest}
@@ -87,6 +88,8 @@ class FillPreview extends React.PureComponent {
 FillPreview.propTypes = {
   /** Hook for testing purposes. */
   dataHook: PropTypes.string,
+
+  className: PropTypes.string,
 
   /** render as some other component or DOM tag */
   as: PropTypes.oneOfType([PropTypes.func, PropTypes.object, PropTypes.string]),

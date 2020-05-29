@@ -87,8 +87,8 @@ class Avatar extends React.PureComponent {
               className={st(classes.avatarContainer, {
                 shape,
                 size,
-                indication: customIndication || indication,
-                presence,
+                indication: Boolean(customIndication || indication),
+                presence: Boolean(presence),
                 presenceType: presence,
                 clickable: !!onClick,
                 fade: fadeIndication,

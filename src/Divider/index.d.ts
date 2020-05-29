@@ -2,6 +2,7 @@ import * as React from 'react';
 
 export interface DividerProps {
   dataHook?: string;
+  className?: string;
   direction?: DividerDirection;
   skin?: DividerSkin;
 }

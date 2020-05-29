@@ -5,7 +5,7 @@ import Tooltip from '../Tooltip';
 import Heading from '../Heading';
 import AdaptiveHeading from '../utils/AdaptiveHeading';
 
-import { st, classes } from './BarChart.st.css';
+import { st, classes, vars } from './BarChart.st.css';
 import dataHooks from './dataHooks';
 
 class BarChart extends React.PureComponent {
@@ -110,7 +110,8 @@ class BarChart extends React.PureComponent {
         data-hook={dataHooks.bar}
         style={{
           // avoid too big numbers from getting into a css
-          '--barValue': value / 10 ** (calculatedTotal.toString().length - 1),
+          [vars.barValue]:
+            value / 10 ** (calculatedTotal.toString().length - 1),
         }}
       >
         {this._renderValue({

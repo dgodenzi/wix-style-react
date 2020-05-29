@@ -5,10 +5,8 @@ import { AccordionItemProps } from './AccordionItem';
 export interface AccordionProps {
   dataHook?: string;
   multiple?: boolean;
-  items?: AccordionItem[];
+  items?: AccordionItemProps[];
   skin?: 'light' | 'standard';
 }
-
-export type AccordionItemButtonType = 'textButton' | 'button';
 
 export default class Accordion extends React.Component<AccordionProps> {}

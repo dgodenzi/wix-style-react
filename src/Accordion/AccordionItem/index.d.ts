@@ -11,6 +11,8 @@ export interface AccordionItemProps {
   className?: string;
 }
 
+export type AccordionItemButtonType = 'textButton' | 'button';
+
 export default class AccordionItem extends React.Component<
   AccordionItemProps
 > {}

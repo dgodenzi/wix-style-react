@@ -4,7 +4,7 @@ import { Editor, EditorState } from 'draft-js';
 
 import EditorUtilities from './EditorUtilities';
 import { sizeTypes, inputToTagsSize, dataHooks } from './constants';
-import { st, classes } from './VariableInput.st.css';
+import { st, classes, vars } from './VariableInput.st.css';
 import StatusIndicator from '../StatusIndicator';
 
 /** Input with variables as tags */
@@ -54,7 +54,7 @@ class VariableInput extends React.PureComponent {
           },
           className,
         )}
-        style={{ '--rows': rows }}
+        style={{ [vars.rows]: rows }}
       >
         <Editor
           ref="editor"

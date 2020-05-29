@@ -50,7 +50,13 @@ class ColorPickerConverterViewer extends PureComponent {
   };
 
   render() {
-    const { color, onAdd, focusableOnFocus, focusableOnBlur } = this.props;
+    const {
+      color,
+      onAdd,
+      focusableOnFocus,
+      focusableOnBlur,
+      className,
+    } = this.props;
     const noColorSelected = color.alpha() === 0;
     const clickable = !!onAdd && !noColorSelected;
 
@@ -63,10 +69,14 @@ class ColorPickerConverterViewer extends PureComponent {
         'data-hook': DataHooks.addColor,
         onFocus: focusableOnFocus,
         onBlur: focusableOnBlur,
-        className: st(classes.preview, {
-          clickable,
-          noColorSelected,
-        }),
+        className: st(
+          classes.preview,
+          {
+            clickable,
+            noColorSelected,
+          },
+          className,
+        ),
         onClick: this.onAddClick,
       },
       clickable && (

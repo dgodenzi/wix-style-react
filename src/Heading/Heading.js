@@ -17,6 +17,7 @@ const Heading = ({
   appearance,
   children,
   dataHook,
+  className,
   ...headingProps
 }) => {
   return React.createElement(
@@ -24,7 +25,7 @@ const Heading = ({
     {
       ...headingProps,
       'data-hook': dataHook,
-      className: st(classes.root, { light, appearance }),
+      className: st(classes.root, { light, appearance }, className),
       'data-appearance': appearance,
       'data-light': light,
     },

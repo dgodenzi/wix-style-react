@@ -46,7 +46,7 @@
 }
 .root :global(.public-DraftEditor-content) {
   -st-mixin: defaultScrollBar; /* TODO: hide will not hovering  */
-  background-color: value(D80);;
+  background-color: value(D80);
   height: calc(var(--rows) * var(--rowHeight) + var(--contentHeight));
   padding: 2px 12px;
   border: 1px solid value(B30);

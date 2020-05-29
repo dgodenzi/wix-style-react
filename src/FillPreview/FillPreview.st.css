@@ -36,7 +36,6 @@
   justify-content: center;
   align-items: center;
   border: 1px solid value(B00-24);
-  background-color: transparent;
 
   /* Disable native focus */
   outline: none;

@@ -333,6 +333,7 @@ class DropdownBase extends React.PureComponent {
       maxHeight,
       fluid,
       animate,
+      className,
     } = this.props;
 
     const { open, selectedId } = this.state;
@@ -356,10 +357,14 @@ class DropdownBase extends React.PureComponent {
         fixed={fixed}
         flip={flip}
         fluid={fluid}
-        className={st(classes.root, {
-          withWidth: Boolean(minWidth || maxWidth),
-          withArrow: showArrow,
-        })}
+        className={st(
+          classes.root,
+          {
+            withWidth: Boolean(minWidth || maxWidth),
+            withArrow: showArrow,
+          },
+          className,
+        )}
       >
         <Popover.Element>{this._renderChildren()}</Popover.Element>
 

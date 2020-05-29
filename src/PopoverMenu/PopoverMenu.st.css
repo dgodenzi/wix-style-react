@@ -22,10 +22,10 @@
   -st-extends: DropdownBase;
 }
 
-.root:withArrow::popover[data-placement*="top"] .popoverContent,
-.root:withArrow::popover[data-placement*="left"] .popoverContent,
-.root:withArrow::popover[data-placement*="right"] .popoverContent,
-.root:withArrow::popover[data-placement*="bottom"] .popoverContent {
+.root:withArrow::popover[data-placement*="top"]::popoverContent,
+.root:withArrow::popover[data-placement*="left"]::popoverContent,
+.root:withArrow::popover[data-placement*="right"]::popoverContent,
+.root:withArrow::popover[data-placement*="bottom"]::popoverContent {
   /* very important rule to make sure that width is defined by the text.
    * not supported in Edge yet.
    */

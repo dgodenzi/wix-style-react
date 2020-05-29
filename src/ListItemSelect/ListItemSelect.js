@@ -140,7 +140,7 @@ class ListItemSelect extends React.PureComponent {
       <Box width="100%" className={classes.textsWrapper}>
         {prefix && (
           <Text
-            className={st(classes.prefix, { subtitle })}
+            className={st(classes.prefix, { subtitle: Boolean(subtitle) })}
             dataHook={dataHooks.PREFIX}
             {...textProps}
             ellipsis={false}

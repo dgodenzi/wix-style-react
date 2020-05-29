@@ -13,10 +13,14 @@ const iconComponentBySizeMap = {
   medium: InfoCircle,
 };
 
-const InfoIcon = ({ dataHook, content, size, tooltipProps }) => {
+const InfoIcon = ({ dataHook, content, size, tooltipProps, className }) => {
   const Icon = iconComponentBySizeMap[size];
   return (
-    <div className={st(classes.root)} data-size={size} data-hook={dataHook}>
+    <div
+      className={st(classes.root, className)}
+      data-size={size}
+      data-hook={dataHook}
+    >
       <Tooltip
         {...tooltipProps}
         content={content}
@@ -33,6 +37,8 @@ InfoIcon.displayName = 'InfoIcon';
 InfoIcon.propTypes = {
   /** Hook for testing purposes. */
   dataHook: PropTypes.string,
+
+  className: PropTypes.string,
 
   /** Icon size. */
   size: PropTypes.oneOf(['small', 'medium']),

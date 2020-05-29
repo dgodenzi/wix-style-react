@@ -22,11 +22,12 @@ const ToggleButton = ({
   focusableOnFocus,
   focusableOnBlur,
   disabled,
+  className,
   ...rest
 }) => (
   <button
     {...rest}
-    className={st(classes.root, { selected })}
+    className={st(classes.root, { selected }, className)}
     data-hook={dataHook}
     data-selected={selected}
     disabled={disabled}

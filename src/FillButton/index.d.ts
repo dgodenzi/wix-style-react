@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { TooltipCommonProps } from '../common'
+import { TooltipCommonProps } from '../common';
 
 export interface FillButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -10,6 +10,7 @@ export interface FillButtonProps
   tooltipContent?: React.ReactNode;
   tooltipProps?: TooltipCommonProps;
   dataHook?: string;
+  className?: string;
 }
 
 export default class FillButton extends React.PureComponent<FillButtonProps> {}

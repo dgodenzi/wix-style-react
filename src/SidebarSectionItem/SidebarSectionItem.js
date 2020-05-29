@@ -17,6 +17,7 @@ class SidebarSectionItem extends React.PureComponent {
   static propTypes = {
     /** Applied as data-hook HTML attribute that can be used in the tests */
     dataHook: PropTypes.string,
+    className: PropTypes.string,
     /** Usually plain text, but could be any node */
     children: PropTypes.node.isRequired,
     /** An element to appear at the beginning of the text */
@@ -46,6 +47,7 @@ class SidebarSectionItem extends React.PureComponent {
       prefix,
       suffix,
       onClick,
+      className,
       focusableOnFocus,
       focusableOnBlur,
     } = this.props;
@@ -62,15 +64,19 @@ class SidebarSectionItem extends React.PureComponent {
               disabled={disabled}
               type="button"
               tabIndex="0"
-              className={st(classes.root, {
-                selected,
-                disabled,
-                prefix,
-                suffix,
-                drillable,
-                skin,
-                alwaysDisplayChevron,
-              })}
+              className={st(
+                classes.root,
+                {
+                  selected,
+                  disabled,
+                  prefix,
+                  suffix,
+                  drillable,
+                  skin,
+                  alwaysDisplayChevron,
+                },
+                className,
+              )}
             >
               {prefix && (
                 <span data-hook={dataHooks.prefix} className={classes.prefix}>

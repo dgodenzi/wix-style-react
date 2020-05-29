@@ -21,6 +21,7 @@ class Icon extends PureComponent {
       labelPlacement,
       focusableOnBlur,
       focusableOnFocus,
+      className,
     } = this.props;
     const iconSize = iconChildSize[size];
     const isLabelOutside = shape === 'round' && labelPlacement === 'end';
@@ -44,7 +45,7 @@ class Icon extends PureComponent {
         >
           <span className={isLabelOutside ? classes.labelContainer : ''}>
             <div
-              className={st(classes.icon, { size, border })}
+              className={st(classes.icon, { size, border }, className)}
               tabIndex={1}
               onBlur={focusableOnBlur}
               onFocus={focusableOnFocus}

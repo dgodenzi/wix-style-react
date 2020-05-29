@@ -12,11 +12,12 @@ const Icon = ({
   focusableOnFocus,
   focusableOnBlur,
   children,
+  className,
   ...rest
 }) => (
   <button
     {...rest}
-    className={st(classes.button, { selected })}
+    className={st(classes.button, { selected }, className)}
     data-click={dataClick}
     data-hook="toggle-icon"
     data-selected={selected}

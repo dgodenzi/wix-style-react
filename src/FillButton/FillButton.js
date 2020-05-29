@@ -20,6 +20,7 @@ class FillButton extends React.PureComponent {
   static propTypes = {
     /** Hook for testing purposes. */
     dataHook: PropTypes.string,
+    className: PropTypes.string,
     /** click handler */
     onClick: PropTypes.func,
     /** supports `small` and `medium` add icon size */
@@ -74,6 +75,7 @@ class FillButton extends React.PureComponent {
       iconSize,
       tooltipContent,
       tooltipProps = {},
+      className,
       ...rest
     } = this.props;
     const background = this._getBackground(fill);
@@ -93,7 +95,11 @@ class FillButton extends React.PureComponent {
         <Proportion className={classes.proportion}>
           <button
             {...rest}
-            className={st(classes.root, { disabled, fill: !!background })}
+            className={st(
+              classes.root,
+              { disabled, fill: !!background },
+              className,
+            )}
             style={{ ...background }}
             data-hook={dataHooks.button}
             onFocus={focusableOnFocus}

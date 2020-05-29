@@ -20,6 +20,8 @@ class Thumbnail extends React.PureComponent {
   static propTypes = {
     dataHook: PropTypes.string,
 
+    className: PropTypes.string,
+
     /** Children to render inside thumbnail. If children passed then title will be rendered below thumbnail */
     children: PropTypes.node,
 
@@ -181,6 +183,7 @@ class Thumbnail extends React.PureComponent {
       height,
       focusableOnFocus,
       focusableOnBlur,
+      className,
     } = this.props;
 
     const hasChildren = !!children;
@@ -197,13 +200,17 @@ class Thumbnail extends React.PureComponent {
       >
         <div
           style={{ height }}
-          className={st(classes.thumbnail, {
-            selected,
-            disabled,
-            size,
-            hasBackground,
-            hasChildren,
-          })}
+          className={st(
+            classes.thumbnail,
+            {
+              selected,
+              disabled,
+              size,
+              hasBackground,
+              hasChildren,
+            },
+            className,
+          )}
           data-selected={selected}
           data-disabled={disabled}
           onFocus={focusableOnFocus}

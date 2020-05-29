@@ -2,6 +2,7 @@ import * as React from 'react';
 
 export interface SidebarSectionItemProps {
   dataHook?: string;
+  className?: string;
   children: React.ReactNode;
   prefix?: React.ReactNode;
   suffix?: React.ReactNode;

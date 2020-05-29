@@ -48,6 +48,8 @@ class AddItem extends Component {
     /** Applied as data-hook HTML attribute that can be used to create driver in testing */
     dataHook: PropTypes.string,
 
+    className: PropTypes.string,
+
     /** When provided, hover will display a tooltip - relevant only for theme `image` */
     tooltipContent: PropTypes.node,
 
@@ -153,11 +155,12 @@ class AddItem extends Component {
       focusableOnFocus,
       focusableOnBlur,
       removePadding,
+      className,
     } = this.props;
 
     return (
       <button
-        className={st(classes.root, { theme, removePadding })}
+        className={st(classes.root, { theme, removePadding }, className)}
         data-hook={dataHook}
         disabled={disabled}
         type="button"

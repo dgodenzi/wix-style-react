@@ -15,6 +15,7 @@ class SidebarBackButton extends React.PureComponent {
 
   static propTypes = {
     dataHook: PropTypes.string,
+    className: PropTypes.string,
     onClick: PropTypes.func,
     /** Text for the button */
     children: PropTypes.string,
@@ -28,6 +29,7 @@ class SidebarBackButton extends React.PureComponent {
       animateArrow,
       onClick,
       dataHook,
+      className,
       focusableOnFocus,
       focusableOnBlur,
     } = this.props;
@@ -38,9 +40,13 @@ class SidebarBackButton extends React.PureComponent {
           const skin = (context && context.getSkin()) || sidebarSkins.dark;
           return (
             <button
-              className={st(classes.BackButton, {
-                lightSkin: skin === sidebarSkins.light,
-              })}
+              className={st(
+                classes.BackButton,
+                {
+                  lightSkin: skin === sidebarSkins.light,
+                },
+                className,
+              )}
               data-hook={dataHook}
               onClick={onClick}
               onFocus={focusableOnFocus}

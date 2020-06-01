@@ -107,7 +107,6 @@ class Popover extends React.Component {
         disableClickOutsideWhenClosed
         timeout={timeout}
         data-hook={dataHook}
-        excludeClass={classes.root}
         {...rest}
         className={st(classes.root, { theme }, className)}
       />

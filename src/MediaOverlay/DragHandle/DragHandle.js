@@ -1,8 +1,8 @@
 import React from 'react';
 import MoveLarge from 'wix-ui-icons-common/system/MoveLarge';
-import { vars } from '../../Foundation/stylable/colors.st.css';
+import { stVars } from '../../Foundation/stylable/colors.st.css';
 
-const DragHandle = () => <MoveLarge style={{ color: vars.D80 }} />;
+const DragHandle = () => <MoveLarge style={{ color: stVars.D80 }} />;
 
 DragHandle.displayName = 'MediaOverlay.DragHandle';
 

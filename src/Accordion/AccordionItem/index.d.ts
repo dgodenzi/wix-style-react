@@ -9,6 +9,7 @@ export interface AccordionItemProps {
   buttonType?: AccordionItemButtonType;
   skin?: 'light' | 'standard';
   className?: string;
+  hideShadow?: boolean;
 }
 
 export type AccordionItemButtonType = 'textButton' | 'button';

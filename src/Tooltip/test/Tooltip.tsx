@@ -44,6 +44,7 @@ function TooltipContentWithAllProps() {
       placement="bottom-start"
       textAlign="start"
       zIndex={1999}
+      className="test"
     />
   );
 }

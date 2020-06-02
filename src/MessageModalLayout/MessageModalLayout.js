@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import Button from '../Button';
 
 /** MessageModalLayout */
-const MessageModalLayout = ({ children, ...restProps }) => {
+const MessageModalLayout = ({ children, className, ...restProps }) => {
   const { illustration } = restProps;
   const [showFooterDivider, setShowFooterDivider] = useState(false);
 

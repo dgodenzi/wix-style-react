@@ -238,7 +238,8 @@
     "wix-eventually": "^2.3.0",
     "wix-ui-core": "^3.0.15",
     "wix-ui-icons-common": "^2.0.202",
-    "wix-ui-test-utils": "^1.0.172"
+    "wix-ui-test-utils": "^1.0.172",
+    "yoshi-stylable-dependencies": "^4.84.0"
   },
   "lint-staged": {
     "linters": {

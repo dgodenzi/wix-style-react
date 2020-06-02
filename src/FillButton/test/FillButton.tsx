@@ -21,6 +21,7 @@ function FillButtonWithAllProps() {
       tooltipContent="content"
       tooltipProps={{}}
       dataHook="hook"
+      className="test"
     />
   );
 }

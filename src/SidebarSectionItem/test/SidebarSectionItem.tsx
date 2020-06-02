@@ -21,6 +21,7 @@ function SidebarSectionItemWithAllProps() {
       prefix={<div />}
       selected
       suffix={<div />}
+      className="test"
     >
       asd
     </SidebarSectionItem>

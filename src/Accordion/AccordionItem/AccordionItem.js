@@ -110,27 +110,18 @@ class AccordionItem extends React.PureComponent {
       onToggle,
       disabled,
       skin,
-<<<<<<< HEAD
       hideShadow,
-=======
       className,
->>>>>>> 7c3811c86... chore(*): accept className prop in components that extend Focusable
     } = this.props;
     const { hover } = this.state;
 
     return (
       <div
-<<<<<<< HEAD
-        className={st(classes.root, {
-          disabled,
-          hover,
-          open,
-          skin,
-          hideShadow,
-        })}
-=======
-        className={st(classes.root, { disabled, hover, open, skin }, className)}
->>>>>>> 7c3811c86... chore(*): accept className prop in components that extend Focusable
+        className={st(
+          classes.root,
+          { disabled, hover, open, skin, hideShadow },
+          className,
+        )}
       >
         <div data-hook={dataHooks.item}>
           <div

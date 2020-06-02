@@ -13,10 +13,6 @@
   -st-default: Focusable;
 }
 
-:vars {
-  overlayColor: rgba(32, 69, 94, 0.8);
-}
-
 .root {
   -st-states: status(enum(error, warning)),
     disabled,

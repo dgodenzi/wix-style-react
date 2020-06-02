@@ -20,12 +20,12 @@ class <%= ComponentName %> extends React.PureComponent {
 
   render() {
     const { count } = this.state;
-    const { dataHook, buttonText } = this.props;
+    const { dataHook, buttonText, className } = this.props;
     const isEven = count % 2 === 0;
 
     return (
       <div
-        className={st(classes.root, { even: isEven, odd: !isEven })}
+        className={st(classes.root, { even: isEven, odd: !isEven }, className)}
         data-hook={dataHook}
       >
         <Text dataHook={dataHooks.<%= componentName %>Count}>

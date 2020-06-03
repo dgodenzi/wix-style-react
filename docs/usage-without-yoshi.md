@@ -11,7 +11,7 @@ ensure webpack has some required loaders configured by adding
 
 #### requirements
 
-We use [Stylable](https://wixplosives.github.io/stylable-v1-docs/) version 1 for components in this library. In order for the webpack to work properly you need to install stylable version 1 as well.
+We use [Stylable](https://stylable.io) for components in this library. In order for the webpack to work properly you need to install stylable as well.
 
 `yarn add --dev stylable @stylable/core @stylable/webpack-plugin`
 

@@ -4,8 +4,7 @@ import WixComponent from '../BaseComponents/WixComponent';
 import Container from '../DragAndDrop/Draggable/components/Container';
 import { Draggable } from '../DragAndDrop/Draggable';
 import withDNDContext from './withDNDContext';
-import classNames from 'classnames';
-import styles from './SortableGrid.st.css';
+import { st, classes } from './SortableGrid.st.css';
 import { dataHooks, StripPosition } from './constants';
 
 /** component allow you to implement drag and drop in grid layout */
@@ -203,9 +202,7 @@ class SortableGrid extends WixComponent {
         total={this.state.items.length}
         {...common}
       >
-        <div
-          className={classNames(styles.sortableGridContent, contentClassName)}
-        >
+        <div className={st(classes.sortableGridContent, contentClassName)}>
           {startFixedElement && (
             <div data-hook={dataHooks.START_FIXED_ELEMENT}>
               {startFixedElement}

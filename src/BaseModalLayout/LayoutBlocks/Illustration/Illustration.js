@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import styles from './Illustration.st.css';
+import { st, classes } from './Illustration.st.css';
 import { dataHooks } from '../../constants';
 import { useBaseModalLayoutContext } from '../../BaseModalLayoutContext';
 
@@ -13,10 +13,10 @@ export const Illustration = ({ dataHook, className, children }) => {
   className = classNames(illustrationClassName, className);
   return (
     (illustration && (
-      <div data-hook={dataHook} {...styles('root', {}, { className })}>
+      <div data-hook={dataHook} className={st(classes.root, className)}>
         {typeof illustration === 'string' ? (
           <img
-            className={styles.image}
+            className={classes.image}
             src={illustration}
             data-hook={dataHooks.illustrationSrc}
           />

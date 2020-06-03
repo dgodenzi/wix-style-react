@@ -1,18 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Heading from '../../../../Heading';
-import styles from './ModalHeading.st.css';
+import { st, classes } from './ModalHeading.st.css';
 
 const ModalHeading = ({ className, headingAppearance, ...restProps }) => {
   const appearance = headingAppearance === 'custom' ? 'H3' : headingAppearance;
   return (
     <Heading
-      {...styles(
-        'root',
-        { custom: headingAppearance === 'custom' },
-        { className },
-      )}
       {...restProps}
+      className={st(
+        classes.root,
+        { custom: headingAppearance === 'custom' },
+        className,
+      )}
       appearance={appearance}
     />
   );

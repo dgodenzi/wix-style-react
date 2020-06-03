@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import styles from './Footnote.st.css';
+import { st, classes } from './Footnote.st.css';
 import Divider from '../../../Divider';
 import { useBaseModalLayoutContext } from '../../BaseModalLayoutContext';
 
@@ -13,9 +13,9 @@ export const Footnote = ({ dataHook, className, children }) => {
   className = classNames(footnoteClassName, className);
   return (
     (footnote && (
-      <div data-hook={dataHook} {...styles('root', {}, { className })}>
+      <div data-hook={dataHook} className={st(classes.root, className)}>
         <Divider />
-        <div className={styles.innerContent}>{footnote}</div>
+        <div className={classes.innerContent}>{footnote}</div>
       </div>
     )) ||
     null

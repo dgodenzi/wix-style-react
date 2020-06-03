@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import styles from './Footer.st.css';
+import { st, classes } from './Footer.st.css';
 import Button from '../../../Button';
 import { dataHooks } from '../../constants';
 import Divider from '../../../Divider';
@@ -31,23 +31,27 @@ export const Footer = ({ dataHook, className, showFooterDivider }) => {
       <div
         data-hook={dataHook}
         data-divider={showFooterDivider}
-        {...styles('root', { showDivider: showFooterDivider }, { className })}
+        className={st(
+          classes.root,
+          { showDivider: showFooterDivider },
+          className,
+        )}
       >
         <Divider
-          className={styles.divider}
+          className={classes.divider}
           dataHook={dataHooks.footerDivider}
         />
-        <div className={styles.innerContent}>
+        <div className={classes.innerContent}>
           {sideActions && (
             <div
               data-hook={dataHooks.footerSideActions}
-              className={styles.sideActions}
+              className={classes.sideActions}
             >
               {sideActions}
             </div>
           )}
           {(hasPrimaryButton || hasSecondaryButton) && (
-            <div className={styles.actions}>
+            <div className={classes.actions}>
               {hasSecondaryButton && (
                 <Button
                   skin={theme}

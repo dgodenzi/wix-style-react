@@ -1,4 +1,4 @@
-import styles from './Content.st.css';
+import { st, classes } from './Content.st.css';
 import React from 'react';
 import Divider from '../../../Divider';
 import PropTypes from 'prop-types';
@@ -18,20 +18,20 @@ export const Content = ({
       <div
         data-hook={dataHook}
         data-hidedividers={contentHideDividers}
-        {...styles(
-          'root',
+        className={st(
+          classes.root,
           {
             hideTopDivider: contentHideDividers,
             hideBottomDivider: contentHideDividers,
           },
-          { className },
+          className,
         )}
       >
-        {!contentHideDividers && <Divider className={styles.topDivider} />}
-        <div className={styles.innerContentWrapper}>
-          <div className={styles.innerContent}>{content}</div>
+        {!contentHideDividers && <Divider className={classes.topDivider} />}
+        <div className={classes.innerContentWrapper}>
+          <div className={classes.innerContent}>{content}</div>
         </div>
-        {!contentHideDividers && <Divider className={styles.bottomDivider} />}
+        {!contentHideDividers && <Divider className={classes.bottomDivider} />}
       </div>
     )) ||
     null

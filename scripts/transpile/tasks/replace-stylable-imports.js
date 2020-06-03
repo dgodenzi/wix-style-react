@@ -30,19 +30,6 @@ const PATHS_TO_CHANGE = [
   },
 ];
 
-const WRONG_PATHS = [
-  /** temp ignore */
-  /**
-  {
-    regexp: /wix-ui-core\/dist\/src\/hocs\/.*\/[A-Za-z]*\.st\.css/,
-    correct: 'hocs.st.css',
-  },
-  {
-    regexp: /wix-ui-core\/dist\/src\/components\/.*\/[A-Za-z]*\.st\.css/,
-    correct: 'index.st.css',
-  }, */
-];
-
 const stylableFiles = glob.sync(targetDir + STYLABLE_PATTERN, {
   ignore: [targetDir + STYLABLE_ES_PATTERN],
 });
@@ -63,9 +50,7 @@ module.exports = function() {
             regexp.test(results),
           );
 
-          const errors = WRONG_PATHS.find(({ regexp }) => regexp.test(results));
-
-          if (!changes && !errors) {
+          if (!changes) {
             resolve();
             return;
           }
@@ -73,23 +58,6 @@ module.exports = function() {
           if (changes) {
             PATHS_TO_CHANGE.forEach(({ regexp, changeTo }) => {
               results = results.replace(regexp, changeTo);
-            });
-          }
-
-          if (errors) {
-            WRONG_PATHS.forEach(({ regexp, correct }) => {
-              const message = [
-                'This stylesheet',
-                filepath,
-                'includes import path',
-                results.match(regexp),
-                'which is not compatible with our es-modules infrastructure.',
-                'Makes sure to change your wix-ui-core import to this: -st-import:',
-                `wix-ui-core/${correct}`,
-                'and to named import: -st-named: ComponentName;',
-                '',
-              ];
-              throw new Error(message.join(' '));
             });
           }
 

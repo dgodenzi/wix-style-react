@@ -91,12 +91,6 @@ export default {
           <br />
         </li>
         <li>
-          <TextButton onClick={linkTo(Category.MODALS, '9.1 Alert')}>
-            Alert
-          </TextButton>
-          <br />
-        </li>
-        <li>
           <TextButton
             onClick={linkTo(Category.COMPONENTS, 'MessageBoxFunctionalLayout')}
           >

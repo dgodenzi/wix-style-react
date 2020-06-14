@@ -9,7 +9,7 @@ import CustomModal from './CustomModal';
 
 import { Category } from '../../../stories/storiesHierarchy';
 
-storiesOf(Category.MODALS, module)
+storiesOf(Category.DEPRECATED, module)
   .add(storySettings.alert.story, () => <Alert />)
   .add(storySettings.destructive.story, () => <DestructiveAlert />)
   .add(storySettings.custom.story, () => <CustomModal />)

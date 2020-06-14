@@ -1,6 +1,6 @@
 import { Category } from '../../../stories/storiesHierarchy';
 
-const kind = Category.MODALS;
+const kind = Category.DEPRECATED;
 export const storySettings = {
   alert: {
     kind,

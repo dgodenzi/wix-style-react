@@ -1,4 +1,3 @@
-
 :import {
   -st-from: "../Foundation/stylable/colors.st.css";
   -st-named: B10, D60 ;
@@ -11,10 +10,15 @@
 }
 
 .container {
-/*@include Text($weight: normal, $size: medium);*/
+  -st-states: hasDivider(boolean);
+  /*@include Text($weight: normal, $size: medium);*/
   display: flex;
   max-width: 100%;
   border-bottom: 1px solid transparent;
+}
+
+.container:hasDivider{
+  border-color: value(D60);
 }
 
 .itemsContainer {
@@ -72,10 +76,6 @@
 }
 .tab.active span.tabText {
   color: value(B10);;
-}
-
-.hasDivider {
-  border-color: value(D60);
 }
 
 .sideContent {

@@ -22,12 +22,9 @@ class Tabs extends React.Component {
   render() {
     const { sideContent, hasDivider, dataHook } = this.props;
     const tabItemsProps = this.getTabItemsProps();
-    const className = classNames(styles.container, {
-      [styles.hasDivider]: hasDivider,
-    });
 
     return (
-      <div data-hook={dataHook} className={className}>
+      <div data-hook={dataHook} {...styles('container', { hasDivider })}>
         <TabItems {...tabItemsProps} />
         <SideContent content={sideContent} />
       </div>

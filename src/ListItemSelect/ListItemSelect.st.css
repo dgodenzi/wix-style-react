@@ -60,6 +60,10 @@
   width: 100%;
 }
 
+.title {
+  margin: 9px 6px 9px 6px ;
+}
+
 /* Prefix & Suffix */
 .textsWrapper >:not(.title) {
   margin-top: auto;

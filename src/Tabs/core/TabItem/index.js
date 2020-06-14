@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import pick from '../../../utils/operators/pick';
 import Text from '../../../Text';
 import * as TabPropTypes from '../constants/tab-prop-types';
-import styles from '../../Tabs.scss';
+import styles from '../../Tabs.st.css';
 
 class TabItem extends React.Component {
   getItemStyle() {

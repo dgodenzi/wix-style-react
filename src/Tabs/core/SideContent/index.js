@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import styles from '../../Tabs.scss';
+import styles from '../../Tabs.st.css';
 
 const SideContent = ({ content }) =>
   content ? <div className={styles.sideContent}>{content}</div> : null;

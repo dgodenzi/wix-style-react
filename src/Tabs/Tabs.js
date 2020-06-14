@@ -1,9 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
 import SideContent from './core/SideContent';
 import TabItems from './core/TabItems';
-import classNames from 'classnames';
 import styles from './Tabs.st.css';
 
 class Tabs extends React.Component {

@@ -9,16 +9,14 @@ export const modalsSymbolsToComponents = {
     componentsNames.MessageBoxFunctionalLayout,
     componentsNames.Modal,
   ],
-
-  [modalsSymbols.content]: [
-    componentsNames.MessageBoxFunctionalLayout,
+  [modalsSymbols.announcement]: [
+    componentsNames.AnnouncementModalLayout,
     componentsNames.Modal,
   ],
   [modalsSymbols.custom]: [
-    componentsNames.MessageBoxFunctionalLayout,
+    componentsNames.CustomModalLayout,
     componentsNames.Modal,
   ],
-  [modalsSymbols.marketing]: [componentsNames.MessageBoxMarketerialLayout],
   [modalsSymbols.preview]: [
     componentsNames.ModalPreviewLayout,
     componentsNames.Modal,

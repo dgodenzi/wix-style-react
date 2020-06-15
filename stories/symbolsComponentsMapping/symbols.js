@@ -120,9 +120,8 @@ export const notificationsSymbols = {
  */
 export const modalsSymbols = {
   alert: '9.1 Alert',
-  content: '9.2 Content',
-  marketing: '9.3 Marketing Modal',
-  // marketing: '9.3 (Deprecated) Marketing',
+  announcement: '9.2 Announcement',
+  custom: '9.3 Custom Modal',
   preview: '9.4 Preview',
   mobile: '9.5 Mobile Modal',
 };

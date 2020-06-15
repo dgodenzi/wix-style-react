@@ -123,6 +123,7 @@ export const modalsComponentsNames = {
   MessageBoxFunctionalLayout: 'MessageBoxFunctionalLayout',
   Modal: 'Modal',
   CustomModalLayout: 'CustomModalLayout',
+  AnnouncementModalLayout: 'AnnouncementModalLayout',
   MessageBoxMarketerialLayout: 'MessageBoxMarketerialLayout',
   ModalPreviewLayout: 'ModalPreviewLayout',
   ModalMobileLayout: 'ModalMobileLayout',

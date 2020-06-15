@@ -6,6 +6,7 @@ export interface AnnouncementModalLayoutProps {
   className?: string;
   dataHook?: string;
   theme?: 'standard' | 'premium';
+  borderless?: boolean;
   onCloseButtonClick?(): void;
   title?: string;
   subtitle?: string;

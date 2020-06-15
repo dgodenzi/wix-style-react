@@ -9,8 +9,8 @@ import BaseModalLayout from '../BaseModalLayout';
 import Button from '../Button';
 
 /** A layout for announcement modals, to be used inside a &lt;Modal /&gt; */
-const AnnouncementModalLayout = ({ children, ...restProps }) => (
-  <BaseModalLayout className={styles.announcementModalLayout} {...restProps}>
+const AnnouncementModalLayout = ({ children, borderless, ...restProps }) => (
+  <BaseModalLayout {...styles('root', { borderless })} {...restProps}>
     <BaseModalLayout.Illustration />
     <BaseModalLayout.Header titleAppearance={'H2'} />
     <BaseModalLayout.Content contentHideDividers>
@@ -51,6 +51,8 @@ AnnouncementModalLayout.propTypes = {
   onCloseButtonClick: PropTypes.func,
   /** a global theme for the modal, will be applied as stylable state and will affect footer buttons skin */
   theme: PropTypes.oneOf(['standard', 'premium']),
+  /** The layout will render without borders and background-color, use this when you want to render a it in a page instead of a dialog */
+  borderless: PropTypes.bool,
 
   /** ...Header.propTypes, */
   /** The modal's title */
@@ -103,6 +105,7 @@ AnnouncementModalLayout.propTypes = {
 
 AnnouncementModalLayout.defaultProps = {
   theme: 'standard',
+  borderless: false,
   actionsSize: 'medium',
 };
 

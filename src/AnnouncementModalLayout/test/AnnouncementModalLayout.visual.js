@@ -57,6 +57,19 @@ const tests = [
     ],
   },
   {
+    describe: 'borderless',
+    its: [
+      {
+        it: 'without borders and background colors',
+        props: {
+          borderless: true,
+          illustration: false,
+          onCloseButtonClick: false,
+        },
+      },
+    ],
+  },
+  {
     describe: 'layout',
     its: [
       {

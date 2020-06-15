@@ -9,7 +9,8 @@
 }
 
 /** Extending BaseModalLayout */
-.announcementModalLayout {
+.root {
+  -st-states: borderless;
   -st-extends: BaseModalLayout;
   align-items: center;
   justify-content: center;
@@ -19,18 +20,24 @@
   width: 600px;
 }
 
+.root:borderless {
+  background-color: unset;
+  border-radius: unset;
+  box-shadow: unset;
+}
+
 /** Styling proprietary components */
-.announcementModalLayout .link {
+.root .link {
   margin-top: value(spacing18);
 }
 
-.announcementModalLayout .bottomSpacing {
+.root .bottomSpacing {
   width: 100%;
   height: value(spacing48);
 }
 
 /* Extending BaseModalLayout Blocks */
-.announcementModalLayout::illustration {
+.root::illustration {
   margin-bottom: value(spacing30);
   max-height: 200px;
   min-height: 120px;
@@ -38,20 +45,20 @@
   overflow: hidden;
 }
 
-.announcementModalLayout::header {
+.root::header {
   padding: 0 value(spacing78);
   margin-bottom: value(spacing12);
 }
 
-.announcementModalLayout::content::innerContent {
+.root::content::innerContent {
   padding: 0 value(spacing78);
 }
 
-.announcementModalLayout::footer::innerContent {
+.root::footer::innerContent {
   padding: value(spacing42) value(spacing78) 0 value(spacing78);
 }
 
-.announcementModalLayout::footnote::innerContent {
+.root::footnote::innerContent {
   padding-right: value(spacing78);
   padding-left: value(spacing78);
 }

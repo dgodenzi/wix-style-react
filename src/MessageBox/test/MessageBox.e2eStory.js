@@ -7,7 +7,7 @@ import FullScreenModal from '../docs/CustomModalExamples/FullScreenModal';
 
 const getModalKind = storyName =>
   getTestStoryKind({
-    category: Category.MODALS,
+    category: Category.DEPRECATED,
     storyName,
   });
 

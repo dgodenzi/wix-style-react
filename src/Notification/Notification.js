@@ -1,6 +1,6 @@
 import React, { Children } from 'react';
 import PropTypes from 'prop-types';
-import { TransitionGroup, CSSTransition } from 'react-transition-group';
+import { CSSTransition } from 'react-transition-group';
 import CloseButton from '../CloseButton';
 import TextLabel from './TextLabel';
 import ActionButton from './ActionButton';
@@ -17,8 +17,8 @@ export const DEFAULT_AUTO_HIDE_TIMEOUT = 6000;
 export const DEFAULT_TIMEOUT = DEFAULT_AUTO_HIDE_TIMEOUT;
 
 const animationsTimeouts = {
-  enter: 500,
-  exit: 350,
+  enter: 300,
+  exit: 300,
 };
 
 const themeIcon = {
@@ -26,11 +26,6 @@ const themeIcon = {
   success: <StatusComplete className={styles.iconStyling} />,
   warning: <StatusWarning className={styles.iconStyling} />,
 };
-
-function FirstChild(props) {
-  const childrenArray = Children.toArray(props.children);
-  return childrenArray[0] || null;
-}
 
 function mapChildren(children) {
   const childrenArray = Children.toArray(children);
@@ -124,12 +119,14 @@ class Notification extends React.PureComponent {
     );
   }
 
-  _renderNotification() {
-    const { zIndex, children, theme } = this.props;
+  render() {
+    const { dataHook, theme, type, zIndex, children } = this.props;
     const childrenComponents = mapChildren(children);
+    const show = this._shouldShowNotification();
 
     return (
       <CSSTransition
+        in={show}
         classNames={{
           enter: styles.notificationAnimationEnter,
           enterActive: styles.notificationAnimationEnterActive,
@@ -137,48 +134,38 @@ class Notification extends React.PureComponent {
           exitActive: styles.notificationAnimationExitActive,
         }}
         timeout={animationsTimeouts}
+        mountOnEnter
+        unmountOnExit
       >
         <div
-          data-hook={dataHooks.notificationWrapper}
+          {...styles('notification', { theme, type })}
+          data-hook={dataHook}
+          data-theme={theme}
+          data-type={type}
           style={{ zIndex }}
-          className={styles.notification}
           role="alert"
           aria-labelledby="notification-label"
           aria-live="polite"
         >
-          {themeIcon[theme] && <div>{themeIcon[theme]}</div>}
+          <div className={styles.notificationContent}>
+            {/* {themeIcon[theme] && <div>{themeIcon[theme]}</div>}*/}
 
-          <div className={styles.labelWrapper}>
-            {childrenComponents.label}
-            {childrenComponents.ctaButton}
+            <div className={styles.labelWrapper}>
+              {childrenComponents.label}
+              {childrenComponents.ctaButton}
+            </div>
+
+            {childrenComponents.closeButton && (
+              <div
+                data-hook={dataHooks.notificationCloseButton}
+                className={styles.closeButton}
+                onClick={this._hideNotificationOnCloseClick}
+                children={childrenComponents.closeButton}
+              />
+            )}
           </div>
-
-          {childrenComponents.closeButton && (
-            <div
-              data-hook={dataHooks.notificationCloseButton}
-              className={styles.closeButton}
-              onClick={this._hideNotificationOnCloseClick}
-              children={childrenComponents.closeButton}
-            />
-          )}
         </div>
       </CSSTransition>
-    );
-  }
-
-  render() {
-    const { dataHook, theme, type } = this.props;
-    return (
-      <div
-        {...styles('root', { theme, type })}
-        data-hook={dataHook}
-        data-theme={theme}
-        data-type={type}
-      >
-        <TransitionGroup component={FirstChild}>
-          {this._shouldShowNotification() ? this._renderNotification() : null}
-        </TransitionGroup>
-      </div>
     );
   }
 }

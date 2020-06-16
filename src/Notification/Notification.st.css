@@ -4,66 +4,61 @@
 }
 
 :vars {
-  listItemHeight: 18px;
-  inidicatorSize: 7px;
-  /*Animations*/
-  easeOutQuint: cubic-bezier(0.23, 1, 0.32, 1);
-  easeInOutSine: cubic-bezier(0.445, 0.05, 0.55, 0.95);
   zIndex_NOTIFICATION: 4000;
 }
 
-.root {
-  -st-states: theme(enum(standard, error, success,warning,premium )), type(enum(local, global, sticky));
-  position: relative;
-}
 
 .notification {
-  box-sizing: border-box;
-  display: flex;
-  justify-content: center;
+  -st-states: theme(enum(standard, error, success,warning,premium )), type(enum(local, global, sticky));
   overflow: hidden;
-  padding: 3px 12px;
-  min-height: 48px;
-  z-index: value(zIndex_NOTIFICATION);
 }
 
-.root:theme(standard) .notification{
+.notification:theme(standard){
   background-color: value(B20);
 }
 
-.root:theme(error) .notification{
+.notification:theme(error){
   background-color: value(R20);
 }
 
-.root:theme(success) .notification{
+.notification:theme(success){
   background-color: value(G20);
 }
 
-.root:theme(warning) .notification{
+.notification:theme(warning) {
   background-color: value(Y10);
 }
 
-.root:theme(premium) .notification{
+.notification:theme(premium) {
   background-color: value(P20);
 }
 
 /* Positions */
-.root:type(local) .notification{
+.notification:type(local) {
   position: absolute;
   right: 0;
   left: 0;
 }
 
-.root:type(global) .notification{
+.notification:type(global){
   position: relative;
   width: 100%;
 }
 
-.root:type(sticky) .notification{
+.notification:type(sticky) {
   position: fixed;
   right: 0;
   width: 100%;
   top: 0;
+}
+
+.notificationContent{
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  margin: 3px 12px;
+  position: relative;
+  z-index: value(zIndex_NOTIFICATION);
 }
 
 .labelWrapper {
@@ -94,65 +89,45 @@
 
 .closeButton {
   position: absolute;
-  top: 15px;
-  right: 12px;
+  top: 11px; /* 3px (margin top of content) + 11px top = 14px */
+  right: -1px; /*  12px (margin right of content) - 1px = 11px*/
 }
 
 /* Animations */
-.notificationAnimationEnter {
-  transition: all 0.4s cubic-bezier(0.895, 0.03, 0.685, 0.22);
+/* Bounding Box */
+.notificationAnimationEnter .notification {
   max-height: 0;
 }
 
-.notificationAnimationEnter .label {
-  transition: all 0.4s value(easeOutQuint) 0.1s;
-  opacity: 0;
-  transform: translateY(-70px);
+.notificationAnimationEnterActive .notification {
+  max-height: 72px;
+  transition: max-height 150ms cubic-bezier(0.0, 0.0, 0.2, 1);
 }
 
-.notificationAnimationEnter .button {
-  transition: all 0.16s value(easeOutQuint) 0.2s;
-  transform: scale(0.6);
-  opacity: 0.5;
+.notificationAnimationExit .notification  {
+  max-height: 72px;
 }
 
-.notificationAnimationEnterActive {
-  max-height: 500px;
-}
-
-.notificationAnimationEnterActive .label {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.notificationAnimationEnterActive  .button {
-  transform: scale(1);
-  opacity: 1;
-}
-
-.notificationAnimationExit {
-  max-height: 500px;
-}
-
-.notificationAnimationExit .label,
-.notificationAnimationExit .button,
-.notificationAnimationExit .closeButton {
-  opacity: 1;
-}
-
-.notificationAnimationExitActive {
-  transition: all 0.25s value(easeInOutSine) 0.1s;
+.notificationAnimationExitActive .notification {
   max-height: 0;
+  transition: max-height 150ms  cubic-bezier(0.4, 0.0, 1, 1);
 }
 
-.notificationAnimationExitActive .label {
-  transition: all 0.25s value(easeInOutSine);
-  opacity: 0.5;
-  transform: translateY(-70px);
+/* Content */
+.notificationAnimationEnter .notificationContent {
+  margin-top: -72px;
 }
 
-.notificationAnimationExitActive .button,
-.notificationAnimationExitActive .closeButton {
-  transition: all 0.12s value(easeInOutSine);
-  opacity: 0;
+.notificationAnimationEnterActive .notificationContent {
+  margin-top: 0;
+  transition: margin-top 150ms cubic-bezier(0.4, 0.0, 1, 1);
+}
+
+.notificationAnimationExit .notificationContent {
+  margin-top: 0;
+}
+
+.notificationAnimationExitActive  .notificationContent {
+  margin-top: -72px;
+  transition: margin-top 150ms cubic-bezier(0.4, 0.0, 1, 1);
 }

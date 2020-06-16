@@ -10,12 +10,13 @@ import InputSuffix, { getVisibleSuffixCount } from './InputSuffix';
 
 import styles from './Input.scss';
 import { InputContext } from './InputContext';
+import { SIZES } from './constants';
 
-const SIZES = {
-  small: 'small',
-  medium: 'medium',
-  normal: 'normal',
-  large: 'large',
+const clearButtonSizeMap = {
+  [SIZES.small]: 'small',
+  [SIZES.medium]: 'medium',
+  [SIZES.normal]: 'medium',
+  [SIZES.large]: 'medium',
 };
 
 class Input extends Component {
@@ -124,8 +125,6 @@ class Input extends Component {
     const isClearButtonVisible =
       this._isClearFeatureEnabled && !!value && !status && !disabled;
 
-    const clearButtonSize = size === SIZES.small ? SIZES.small : SIZES.medium;
-
     const visibleSuffixCount = getVisibleSuffixCount({
       status: hideStatusSuffix ? undefined : status,
       statusMessage,
@@ -209,7 +208,7 @@ class Input extends Component {
               onIconClicked={onIconClicked}
               isClearButtonVisible={isClearButtonVisible}
               onClear={this.handleSuffixOnClear}
-              clearButtonSize={clearButtonSize}
+              clearButtonSize={clearButtonSizeMap[size]}
               menuArrow={menuArrow}
               suffix={suffix}
               tooltipPlacement={tooltipPlacement}
@@ -364,7 +363,7 @@ Input.displayName = 'Input';
 
 Input.defaultProps = {
   autoSelect: true,
-  size: SIZES.normal,
+  size: 'normal',
   roundInput: false,
   textOverflow: 'clip',
   maxLength: 524288,
@@ -498,7 +497,7 @@ Input.propTypes = {
   rtl: PropTypes.bool,
 
   /** Specifies the size of the input */
-  size: PropTypes.oneOf(Object.keys(SIZES)),
+  size: PropTypes.oneOf(['small', 'normal', 'medium', 'large']),
 
   /** Component you want to show as the suffix of the input */
   suffix: PropTypes.node,

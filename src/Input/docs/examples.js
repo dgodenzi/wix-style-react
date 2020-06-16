@@ -15,9 +15,9 @@ export const standard = `
 export const withCloseButton = `
 class MyComponent extends React.Component {
   state = {
-    firstInputText: '',
-    secondInputText: '',
-    thirdInputText: '',
+    firstInputText: 'Input with a close button',
+    secondInputText: 'Input with a close button',
+    thirdInputText: 'Input with a close button',
   };
 
   render() {

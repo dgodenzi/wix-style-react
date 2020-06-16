@@ -67,6 +67,7 @@ export default {
 
           ...[
             { title: 'Standard States', source: examples.standard },
+            { title: 'With close button', source: examples.withCloseButton },
             { title: 'Read Only', source: examples.readOnly },
             { title: 'Error', source: examples.error },
             { title: 'Warning', source: examples.warning },

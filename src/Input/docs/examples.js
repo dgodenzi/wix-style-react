@@ -12,6 +12,67 @@ export const standard = `
 </Layout>
 `;
 
+export const withCloseButton = `
+class MyComponent extends React.Component {
+  state = {
+    firstInputText: '',
+    secondInputText: '',
+    thirdInputText: '',
+  };
+
+  render() {
+    const {
+      firstInputText,
+      secondInputText,
+      thirdInputText
+    } = this.state;
+
+    return (
+      <Layout>
+        <Cell>
+          <Input
+            size="small"
+            value={firstInputText}
+            clearButton={true}
+            onChange={e => {
+              this.setState({ firstInputText: e.target.value })
+            }}
+            onClear={() => {
+              this.setState({ firstInputText: '' })
+            }}
+           />
+        </Cell>
+        <Cell>
+          <Input
+              value={secondInputText}
+              clearButton={true}
+              onChange={e => {
+                this.setState({ secondInputText: e.target.value })
+              }}
+              onClear={() => {
+                this.setState({ secondInputText: '' })
+              }}
+            />
+        </Cell>
+        <Cell>
+          <Input
+            size="large"
+            value={thirdInputText}
+            clearButton={true}
+            onChange={e => {
+              this.setState({ thirdInputText: e.target.value })
+            }}
+            onClear={() => {
+              this.setState({ thirdInputText: '' })
+            }}
+          />
+        </Cell>
+      </Layout>
+    );
+  }
+}
+`;
+
 export const readOnly = `
 <Layout>
   <Cell>

@@ -125,47 +125,47 @@ class Notification extends React.PureComponent {
     const show = this._shouldShowNotification();
 
     return (
-      <CSSTransition
-        in={show}
-        classNames={{
-          enter: styles.notificationAnimationEnter,
-          enterActive: styles.notificationAnimationEnterActive,
-          exit: styles.notificationAnimationExit,
-          exitActive: styles.notificationAnimationExitActive,
-        }}
-        timeout={animationsTimeouts}
-        mountOnEnter
-        unmountOnExit
-      >
-        <div
-          {...styles('notification', { theme, type })}
-          data-hook={dataHook}
-          data-theme={theme}
-          data-type={type}
-          style={{ zIndex }}
-          role="alert"
-          aria-labelledby="notification-label"
-          aria-live="polite"
+      <div data-hook={dataHook} data-theme={theme} data-type={type}>
+        <CSSTransition
+          in={show}
+          classNames={{
+            enter: styles.notificationAnimationEnter,
+            enterActive: styles.notificationAnimationEnterActive,
+            exit: styles.notificationAnimationExit,
+            exitActive: styles.notificationAnimationExitActive,
+          }}
+          timeout={animationsTimeouts}
+          mountOnEnter
+          unmountOnExit
         >
-          <div className={styles.notificationContent}>
-            {themeIcon[theme] && <div>{themeIcon[theme]}</div>}
+          <div
+            {...styles('notification', { theme, type })}
+            data-hook={dataHooks.notificationWrapper}
+            style={{ zIndex }}
+            role="alert"
+            aria-labelledby="notification-label"
+            aria-live="polite"
+          >
+            <div className={styles.notificationContent}>
+              {themeIcon[theme] && <div>{themeIcon[theme]}</div>}
 
-            <div className={styles.labelWrapper}>
-              {childrenComponents.label}
-              {childrenComponents.ctaButton}
+              <div className={styles.labelWrapper}>
+                {childrenComponents.label}
+                {childrenComponents.ctaButton}
+              </div>
+
+              {childrenComponents.closeButton && (
+                <div
+                  data-hook={dataHooks.notificationCloseButton}
+                  className={styles.closeButton}
+                  onClick={this._hideNotificationOnCloseClick}
+                  children={childrenComponents.closeButton}
+                />
+              )}
             </div>
-
-            {childrenComponents.closeButton && (
-              <div
-                data-hook={dataHooks.notificationCloseButton}
-                className={styles.closeButton}
-                onClick={this._hideNotificationOnCloseClick}
-                children={childrenComponents.closeButton}
-              />
-            )}
           </div>
-        </div>
-      </CSSTransition>
+        </CSSTransition>
+      </div>
     );
   }
 }
@@ -205,7 +205,7 @@ Notification.propTypes = {
   /** Can be either:
    * - `<Notification.TextLabel/>` (required)
    * - `<Notification.CloseButton/>`
-   * -`<Notification.ActionButton/>` */
+   * - `<Notification.ActionButton/>` */
   children: PropTypes.node,
 };
 

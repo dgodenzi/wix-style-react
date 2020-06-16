@@ -11,6 +11,13 @@ import InputSuffix, { getVisibleSuffixCount } from './InputSuffix';
 import styles from './Input.scss';
 import { InputContext } from './InputContext';
 
+const SIZES = {
+  small: 'small',
+  medium: 'medium',
+  normal: 'normal',
+  large: 'large',
+};
+
 class Input extends Component {
   static Ticker = Ticker;
   static IconAffix = IconAffix;
@@ -103,6 +110,7 @@ class Input extends Component {
       hideStatusSuffix,
       customInput,
       pattern,
+      size,
     } = this.props;
     const onIconClicked = e => {
       if (!disabled) {
@@ -115,6 +123,8 @@ class Input extends Component {
     // this doesn't work for uncontrolled, "value" refers only to controlled input
     const isClearButtonVisible =
       this._isClearFeatureEnabled && !!value && !status && !disabled;
+
+    const clearButtonSize = size === SIZES.small ? SIZES.small : SIZES.medium;
 
     const visibleSuffixCount = getVisibleSuffixCount({
       status: hideStatusSuffix ? undefined : status,
@@ -199,6 +209,7 @@ class Input extends Component {
               onIconClicked={onIconClicked}
               isClearButtonVisible={isClearButtonVisible}
               onClear={this.handleSuffixOnClear}
+              clearButtonSize={clearButtonSize}
               menuArrow={menuArrow}
               suffix={suffix}
               tooltipPlacement={tooltipPlacement}
@@ -353,7 +364,7 @@ Input.displayName = 'Input';
 
 Input.defaultProps = {
   autoSelect: true,
-  size: 'normal',
+  size: SIZES.normal,
   roundInput: false,
   textOverflow: 'clip',
   maxLength: 524288,
@@ -487,7 +498,7 @@ Input.propTypes = {
   rtl: PropTypes.bool,
 
   /** Specifies the size of the input */
-  size: PropTypes.oneOf(['small', 'normal', 'medium', 'large']),
+  size: PropTypes.oneOf(Object.keys(SIZES)),
 
   /** Component you want to show as the suffix of the input */
   suffix: PropTypes.node,

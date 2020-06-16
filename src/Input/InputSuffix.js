@@ -30,6 +30,7 @@ const InputSuffix = ({
   onIconClicked,
   isClearButtonVisible,
   onClear,
+  clearButtonSize,
   menuArrow,
   suffix,
   tooltipPlacement,
@@ -53,7 +54,7 @@ const InputSuffix = ({
         <div className={styles.clearButton}>
           <CloseButton
             dataHook="input-clear-button"
-            size="medium"
+            size={clearButtonSize}
             onClick={onClear}
           />
         </div>
@@ -105,6 +106,7 @@ InputSuffix.propTypes = {
   onIconClicked: PropTypes.func,
   isClearButtonVisible: PropTypes.bool,
   onClear: PropTypes.func,
+  clearButtonSize: PropTypes.oneOf(['small', 'medium']),
   menuArrow: PropTypes.bool,
   suffix: PropTypes.node,
   tooltipPlacement: PropTypes.string,

@@ -169,7 +169,7 @@
 .content:theme(image) {
   border: dashed 1px value(B20);
   border-radius: 3px;
-  padding: 12px 30px;
+  padding: 12px;
 }
 
 .content:disabled:theme(image) {

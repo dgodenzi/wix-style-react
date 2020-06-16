@@ -125,7 +125,12 @@ class Notification extends React.PureComponent {
     const show = this._shouldShowNotification();
 
     return (
-      <div data-hook={dataHook} data-theme={theme} data-type={type}>
+      <div
+        {...styles('root', { theme, type })}
+        data-hook={dataHook}
+        data-theme={theme}
+        data-type={type}
+      >
         <CSSTransition
           in={show}
           classNames={{
@@ -139,8 +144,8 @@ class Notification extends React.PureComponent {
           unmountOnExit
         >
           <div
-            {...styles('notification', { theme, type })}
             data-hook={dataHooks.notificationWrapper}
+            className={styles.notification}
             style={{ zIndex }}
             role="alert"
             aria-labelledby="notification-label"

@@ -7,45 +7,47 @@
   zIndex_NOTIFICATION: 4000;
 }
 
+.root {
+  -st-states: theme(enum(standard, error, success,warning,premium )), type(enum(local, global, sticky));
+}
 
 .notification {
-  -st-states: theme(enum(standard, error, success,warning,premium )), type(enum(local, global, sticky));
   overflow: hidden;
 }
 
-.notification:theme(standard){
+.root:theme(standard) .notification{
   background-color: value(B20);
 }
 
-.notification:theme(error){
+.root:theme(error) .notification{
   background-color: value(R20);
 }
 
-.notification:theme(success){
+.root:theme(success) .notification{
   background-color: value(G20);
 }
 
-.notification:theme(warning) {
+.root:theme(warning) .notification{
   background-color: value(Y10);
 }
 
-.notification:theme(premium) {
+.root:theme(premium) .notification{
   background-color: value(P20);
 }
 
 /* Positions */
-.notification:type(local) {
+.root:type(local) .notification {
   position: absolute;
   right: 0;
   left: 0;
 }
 
-.notification:type(global){
+.root:type(global) .notification{
   position: relative;
   width: 100%;
 }
 
-.notification:type(sticky) {
+.root:type(sticky) .notification{
   position: fixed;
   right: 0;
   width: 100%;

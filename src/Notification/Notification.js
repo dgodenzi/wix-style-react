@@ -148,7 +148,7 @@ class Notification extends React.PureComponent {
           aria-live="polite"
         >
           <div className={styles.notificationContent}>
-            {/* {themeIcon[theme] && <div>{themeIcon[theme]}</div>}*/}
+            {themeIcon[theme] && <div>{themeIcon[theme]}</div>}
 
             <div className={styles.labelWrapper}>
               {childrenComponents.label}
